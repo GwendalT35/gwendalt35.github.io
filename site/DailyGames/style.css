@@ -1,23 +1,63 @@
+body{
+    background-color: #000;
+}
+/* Container Grid Styling */
 .container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    grid-template-rows: auto; /* Automatically adjust row height */
-    gap: 10px; /* Space between the grid items */
-  }
-  
-  .container ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: #f2f2f2;
-    text-align: center;
-    border: 1px solid #ccc;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    grid-gap: 20px; /* Gap between grid items */
     padding: 20px;
   }
   
-  .container ul a {
+  /* Remove default UL and LI styling */
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Each UL acts as a grid item */
+  ul {
+    background-color: #222; /* Light background for contrast */
+    border: 1px solid #333; /* Slight border for grid boxes */
+    border-radius: 8px; /* Smooth edges */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+  }
+  
+  /* Hover effect to make it more interactive */
+  ul:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  }
+  
+  /* Styling the <a> tag (links around the image) */
+  ul a {
+    display: block;
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
+    color: inherit; /* Keep link color neutral */
+  }
+  
+  /* Image styling */
+  ul img {
+    max-width: 100%; /* Image should take full width */
+    /* height: auto; Maintain aspect ratio */
+    width: 342.39px;
+    height: 67px;
+    display: block; /* Removes extra spacing */
+    border-radius: 4px; /* Smooth image edges */
+  }
+  
+  /* Responsive Design for smaller screens */
+  @media (max-width: 800px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on smaller screens */
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .container {
+      grid-template-columns: 1fr; /* Change to 1 column on very small screens */
+    }
   }
   
