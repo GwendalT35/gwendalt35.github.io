@@ -15,20 +15,8 @@ window.addEventListener("load", (event) => {
         let video = document.getElementById("bgVideo");
         video.className = "zoom";
         setTimeout(() =>{
-            window.location = document.location.href + "stage/lobby.html";
+            window.location = window.location.href.split("index.html")[0] + "stage/lobby.html";
         }, 1000)
-        console.log("inv button clciked")
+        console.log("inv button clicked")
     });
-    // const box = document.querySelector(".box");
-    // const pageX = document.getElementById("x");
-    // const pageY = document.getElementById("y");
-
-    // function updateDisplay(event) {
-    // pageX.innerText = event.pageX;
-    // pageY.innerText = event.pageY;
-    // }
-
-    // box.addEventListener("mousemove", updateDisplay, false);
-    // box.addEventListener("mouseenter", updateDisplay, false);
-    // box.addEventListener("mouseleave", updateDisplay, false);
   });
