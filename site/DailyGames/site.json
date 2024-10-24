@@ -179,6 +179,46 @@
       "name": "moviegrid",
       "url": "https://moviegrid.io/",
       "image": "./image/moviegrid.png"
+    },
+    {
+      "name": "guessthegame",
+      "url": "https://guessthe.game/",
+      "image": "./image/guessthegame.png"
+    },
+    {
+      "name": "tradle",
+      "url": "https://games.oec.world/en/tradle/",
+      "image": "./image/tradle.png"
+    },
+    {
+      "name": "timeguessr",
+      "url": "https://timeguessr.com/game-settings",
+      "image": "./image/timeguessr.png"
+    },
+    {
+      "name": "synoptix",
+      "url": "https://www.synoptix.fr/",
+      "image": "./image/synoptix.png"
+    },
+    {
+      "name": "themely",
+      "url": "https://themely.se/days",
+      "image": "./image/themely.png"
+    },
+    {
+      "name": "pimiento",
+      "url": "https://pimiento.janvier.tv/fr",
+      "image": "./image/pimiento.png"
+    },
+    {
+      "name": "wikitrivia",
+      "url": "https://wikitrivia.tomjwatson.com/",
+      "image": "./image/wikitrivia.png"
+    },
+    {
+      "name": "countryle",
+      "url": "https://countryle.com/",
+      "image": "./image/countryle.png"
     }
   ]
 }
