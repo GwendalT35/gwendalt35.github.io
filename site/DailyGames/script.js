@@ -17,6 +17,10 @@ async function getData() {
 
       const container = document.getElementById('container');
 
+      json.websites.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+      
       json.websites.forEach(site => {
         // Créer un élément 'ul'
         const ul = document.createElement('ul');
