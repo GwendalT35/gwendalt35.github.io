@@ -144,6 +144,11 @@
             "name": "Metazooa",
             "url": "https://metazooa.com/game?EnterGame=",
             "image": "./image/Metazooa.png"
+        },
+        {
+            "name": "Spotle",
+            "url": "https://spotle.io/",
+            "image": "./image/Spotle.png"
         }
       ]      
 }
