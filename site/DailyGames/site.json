@@ -1,0 +1,149 @@
+{
+    "websites": [
+        {
+          "name": "When Taken",
+          "url": "https://whentaken.com/",
+          "image": "./image/WhenTaken.png"
+        },
+        {
+          "name": "Searchle",
+          "url": "https://searchle.net/",
+          "image": "./image/Searchle.png"
+        },
+        {
+          "name": "Travle",
+          "url": "https://travle.earth/",
+          "image": "./image/Travle.png"
+        },
+        {
+          "name": "One Piecedle",
+          "url": "https://onepiecedle.net/",
+          "image": "./image/OnePieceDle.png"
+        },
+        {
+          "name": "Wikipedia Speerun",
+          "url": "https://wikispeedruns.com/",
+          "image": "./image/WikiSpeed.png"
+        },
+        {
+          "name": "The Wikipedia Game",
+          "url": "https://www.thewikigame.com/",
+          "image": "./image/WikiGame.png"
+        },
+        {
+          "name": "GameDle",
+          "url": "https://www.gamedle.wtf/",
+          "image": "./image/Gamedle.png"
+        },
+        {
+          "name": "Invoker Game",
+          "url": "https://www.invokergame.com/",
+          "image": "./image/Invoker.png"
+        },
+        {
+          "name": "Cookie Clicker",
+          "url": "https://orteil.dashnet.org/cookieclicker/",
+          "image": "./image/Cookie.png"
+        },
+        {
+          "name": "Loldle",
+          "url": "https://loldle.net/",
+          "image": "./image/Loldle.png"
+        },
+        {
+          "name": "Rankdle",
+          "url": "https://rankdle.com/",
+          "image": "./image/Rankle.png"
+        },
+        {
+          "name": "Pedantle",
+          "url": "https://cemantle.certitudes.org/pedantle",
+          "image": "./image/Pedantle.png"
+        },
+        {
+          "name": "Pedantix",
+          "url": "https://cemantix.certitudes.org/pedantix",
+          "image": "./image/Pedantix.png"
+        },
+        {
+          "name": "Le mot",
+          "url": "https://wordle.louan.me/",
+          "image": "./image/LEmot.png"
+        },
+        {
+          "name": "Mathler",
+          "url": "https://www.mathler.com/",
+          "image": "./image/Mathler.png"
+        },
+        {
+          "name": "Heardle",
+          "url": "https://heardlewordle.io/",
+          "image": "./image/Heardle.png"
+        },
+        {
+          "name": "Tusmo",
+          "url": "https://www.tusmo.xyz/",
+          "image": "./image/Tusmo.png"
+        },
+        {
+          "name": "Sutom",
+          "url": "https://sutom.nocle.fr/",
+          "image": "./image/Sutom.png"
+        },
+        {
+          "name": "Framed",
+          "url": "https://framed.wtf/",
+          "image": "./image/framed.png"
+        },
+        {
+          "name": "Cemantle",
+          "url": "https://cemantle.certitudes.org/",
+          "image": "./image/Cemantle.png"
+        },
+        {
+          "name": "Cemantix",
+          "url": "https://cemantix.certitudes.org/",
+          "image": "./image/Cemantix.png"
+        },
+        {
+          "name": "Smiterino",
+          "url": "http://smiterino.com/",
+          "image": "./image/Smiterino.png"
+        },
+        {
+            "name": "Statele",
+            "url": "https://statele.teuteuf.fr/",
+            "image": "./image/Statele.png"
+        },
+        {
+            "name": "Where Taken USA",
+            "url": "https://wheretakenusa.teuteuf.fr/",
+            "image": "./image/WhereTakenUSA.png"
+        },
+        {
+            "name": "Flagle",
+            "url": "https://www.flagle.io/",
+            "image": "./image/Flagle.png"
+        },
+        {
+            "name": "Geogrid",
+            "url": "https://www.geogridgame.com/",
+            "image": "./image/Geogrid.png"
+        },
+        {
+            "name": "Emovi",
+            "url": "https://emovi.teuteuf.fr/",
+            "image": "./image/Emovi.png"
+        },
+        {
+            "name": "Metaflora",
+            "url": "https://flora.metazooa.com/game?EnterGame=",
+            "image": "./image/Metaflora.png"
+        },
+        {
+            "name": "Metazooa",
+            "url": "https://metazooa.com/game?EnterGame=",
+            "image": "./image/Metazooa.png"
+        }
+      ]      
+}
