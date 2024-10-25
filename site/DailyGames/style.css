@@ -97,10 +97,7 @@ ul a {
 
 /* Image styling */
 ul img {
-  max-width: 100%;
-  /* Image should take full width */
-  /* height: auto; Maintain aspect ratio */
-  width: 345.61px;
+  width: 100%;
   height: 67px;
   display: block;
   /* Removes extra spacing */
