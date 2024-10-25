@@ -219,6 +219,26 @@
       "name": "countryle",
       "url": "https://countryle.com/",
       "image": "./image/countryle.png"
+    },
+    {
+      "name": "narutodle",
+      "url": "https://narutodle.net/",
+      "image": "./image/narutodle.png"
+    },
+    {
+      "name": "pokedle",
+      "url": "https://pokedle.net/",
+      "image": "./image/pokedle.png"
+    },
+    {
+      "name": "smashdle",
+      "url": "https://smashdle.net/",
+      "image": "./image/smashdle.png"
+    },
+    {
+      "name": "dotadle",
+      "url": "https://dotadle.net/",
+      "image": "./image/dotadle.png"
     }
   ]
 }
