@@ -42,6 +42,7 @@ async function getData() {
       // Créer un élément 'a' avec l'attribut 'href'
       const link = document.createElement('a');
       link.href = site.url;
+      link.target = "_blank";
 
       // Créer un élément 'img' avec l'attribut 'src' et 'alt'
       const img = document.createElement('img');
