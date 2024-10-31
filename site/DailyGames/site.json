@@ -236,12 +236,12 @@
       "image": "./image/smashdle.png"
     },
     {
-      "name": "Where Taken",
+      "name": "dotadle",
       "url": "https://dotadle.net/",
       "image": "./image/dotadle.png"
     },
     {
-      "name": "dotadle",
+      "name": "Where Taken",
       "url": "https://wheretaken.teuteuf.fr/",
       "image": "./image/WhereTaken.png"
     }

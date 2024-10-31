@@ -24,14 +24,19 @@ async function getData() {
     }
 
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
 
     const container = document.getElementById('container');
 
     json.websites.sort((a, b) => {
+      a.name = a.name.toLowerCase();
+      b.name = b.name.toLowerCase();
+      
       return a.name.localeCompare(b.name);
     });
 
+    console.log(json.websites);
+    
     json.websites.forEach(site => {
       // Créer un élément 'ul'
       const ul = document.createElement('ul');
