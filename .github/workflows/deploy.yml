@@ -1,43 +1,32 @@
-name: Deploy Firebase App to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # déploie quand il y a un push sur la branche main
+      - main  # Déclenche le déploiement lors d'un push sur la branche "main"
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the project
-        run: npm run build  # Si vous avez une étape de build (ajustez selon votre config)
 
       - name: Inject Firebase Config
         run: |
-          echo "window.firebaseConfig = {" > ./dist/config.js
-          echo "  apiKey: '${{ secrets.APIKEY }}'," >> ./dist/config.js
-          echo "  authDomain: '${{ secrets.AUTHDOMAIN }}'," >> ./dist/config.js
-          echo "  databaseURL: '${{ secrets.DATABASEURL }}'," >> ./dist/config.js
-          echo "  projectId: '${{ secrets.PROJECTID }}'," >> ./dist/config.js
-          echo "  storageBucket: '${{ secrets.STORAGEBUCKET }}'," >> ./dist/config.js
-          echo "  messagingSenderId: '${{ secrets.MESSAGINGSENDERID }}'," >> ./dist/config.js
-          echo "  appId: '${{ secrets.APPID }}'" >> ./dist/config.js
-          echo "};" >> ./dist/config.js
+          echo "window.firebaseConfig = {" > ./site/script/config.js
+          echo "  apiKey: '${{ secrets.APIKEY }}'," >> ./site/script/config.js
+          echo "  authDomain: '${{ secrets.AUTHDOMAIN }}'," >> ./site/script/config.js
+          echo "  databaseURL: '${{ secrets.DATABASEURL }}'," >> ./site/script/config.js
+          echo "  projectId: '${{ secrets.PROJECTID }}'," >> ./site/script/config.js
+          echo "  storageBucket: '${{ secrets.STORAGEBUCKET }}'," >> ./site/script/config.js
+          echo "  messagingSenderId: '${{ secrets.MESSAGINGSENDERID }}'," >> ./site/script/config.js
+          echo "  appId: '${{ secrets.APPID }}'" >> ./site/script/config.js
+          echo "};" >> ./site/script/config.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./site  # Spécifie le dossier du site statique
