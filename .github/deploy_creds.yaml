@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # or the branch you are using for deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up environment variables
+        run: |
+          echo "FIREBASE_APIKEY=${{ secrets.FIREBASE_APIKEY }}" >> $GITHUB_ENV
+          echo "FIREBASE_AUTHDOMAIN=${{ secrets.FIREBASE_AUTHDOMAIN }}" >> $GITHUB_ENV
+          echo "FIREBASE_DATABASEURL=${{ secrets.FIREBASE_DATABASEURL }}" >> $GITHUB_ENV
+          echo "FIREBASE_PROJECTID=${{ secrets.FIREBASE_PROJECTID }}" >> $GITHUB_ENV
+          echo "FIREBASE_STORAGEBUCKET=${{ secrets.FIREBASE_STORAGEBUCKET }}" >> $GITHUB_ENV
+          echo "FIREBASE_MESSAGINGSENDERID=${{ secrets.FIREBASE_MESSAGINGSENDERID }}" >> $GITHUB_ENV
+          echo "FIREBASE_APPID=${{ secrets.FIREBASE_APPID }}" >> $GITHUB_ENV
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Use the GitHub token
+          publish_dir: /root  # Change to the directory of your static files if necessary
