@@ -1,28 +1,20 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -35,20 +27,23 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       
+      - name: Create Firebase config file
+        run: |
+          echo "export const firebaseConfig = {" > config.js
+          echo "    apiKey: '${{ secrets.APIKEY }}'," >> config.js
+          echo "    authDomain: '${{ secrets.AUTHDOMAIN }}'," >> config.js
+          echo "    databaseURL: '${{ secrets.DATABASEURL }}'," >> config.js
+          echo "    projectId: '${{ secrets.PROJECTID }}'," >> config.js
+          echo "    storageBucket: '${{ secrets.STORAGEBUCKET }}'," >> config.js
+          echo "    messagingSenderId: '${{ secrets.MESSAGINGSENDERID }}'," >> config.js
+          echo "    appId: '${{ secrets.APPID }}'" >> config.js
+          echo "};" >> config.js
+          echo "const app = firebase.initializeApp(firebaseConfig);" >> config.js
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: '.'
-
-      - name: Set up Firebase environment variables
-        run: echo "APIKEY=${{ secrets.APIKEY }}" >> $GITHUB_ENV
-             echo "AUTHDOMAIN=${{ secrets.AUTHDOMAIN }}" >> $GITHUB_ENV
-             echo "DATABASEURL=${{ secrets.DATABASEURL }}" >> $GITHUB_ENV
-             echo "PROJECTID=${{ secrets.PROJECTID }}" >> $GITHUB_ENV
-             echo "STORAGEBUCKET=${{ secrets.STORAGEBUCKET }}" >> $GITHUB_ENV
-             echo "MESSAGINGSENDERID=${{ secrets.MESSAGINGSENDERID }}" >> $GITHUB_ENV
-             echo "APPID=${{ secrets.APPID }}" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages
         id: deployment
