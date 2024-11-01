@@ -31,13 +31,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '.'
+
+      - name: Set up Firebase environment variables
+        run: echo "APIKEY=${{ secrets.APIKEY }}" >> $GITHUB_ENV
+             echo "AUTHDOMAIN=${{ secrets.AUTHDOMAIN }}" >> $GITHUB_ENV
+             echo "DATABASEURL=${{ secrets.DATABASEURL }}" >> $GITHUB_ENV
+             echo "PROJECTID=${{ secrets.PROJECTID }}" >> $GITHUB_ENV
+             echo "STORAGEBUCKET=${{ secrets.STORAGEBUCKET }}" >> $GITHUB_ENV
+             echo "MESSAGINGSENDERID=${{ secrets.MESSAGINGSENDERID }}" >> $GITHUB_ENV
+             echo "APPID=${{ secrets.APPID }}" >> $GITHUB_ENV
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
