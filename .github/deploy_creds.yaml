@@ -1,29 +1,27 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages wth creds
 
 on:
   push:
     branches:
-      - main  # Déclenche le déploiement lors d'un push sur la branche "main"
+      - main  # ou la branche que tu utilises pour le déploiement
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Inject Firebase Config
+      - name: Set up environment variables
         run: |
-          echo "window.firebaseConfig = {" > ./site/script/config.js
-          echo "  apiKey: '${{ secrets.APIKEY }}'," >> ./site/script/config.js
-          echo "  authDomain: '${{ secrets.AUTHDOMAIN }}'," >> ./site/script/config.js
-          echo "  databaseURL: '${{ secrets.DATABASEURL }}'," >> ./site/script/config.js
-          echo "  projectId: '${{ secrets.PROJECTID }}'," >> ./site/script/config.js
-          echo "  storageBucket: '${{ secrets.STORAGEBUCKET }}'," >> ./site/script/config.js
-          echo "  messagingSenderId: '${{ secrets.MESSAGINGSENDERID }}'," >> ./site/script/config.js
-          echo "  appId: '${{ secrets.APPID }}'" >> ./site/script/config.js
-          echo "};" >> ./site/script/config.js
+          echo "FIREBASE_APIKEY=${{ secrets.FIREBASE_APIKEY }}" >> $GITHUB_ENV
+          echo "FIREBASE_AUTHDOMAIN=${{ secrets.FIREBASE_AUTHDOMAIN }}" >> $GITHUB_ENV
+          echo "FIREBASE_DATABASEURL=${{ secrets.FIREBASE_DATABASEURL }}" >> $GITHUB_ENV
+          echo "FIREBASE_PROJECTID=${{ secrets.FIREBASE_PROJECTID }}" >> $GITHUB_ENV
+          echo "FIREBASE_STORAGEBUCKET=${{ secrets.FIREBASE_STORAGEBUCKET }}" >> $GITHUB_ENV
+          echo "FIREBASE_MESSAGINGSENDERID=${{ secrets.FIREBASE_MESSAGINGSENDERID }}" >> $GITHUB_ENV
+          echo "FIREBASE_APPID=${{ secrets.FIREBASE_APPID }}" >> $GITHUB_ENV
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
