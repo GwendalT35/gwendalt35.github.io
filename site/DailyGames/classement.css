@@ -1,0 +1,175 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: #0b0c11; /* Dark background for cyberpunk feel */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    color: #ffffff; /* Bright text color for contrast */
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+form {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Neon glow effect */
+    width: 300px;
+    margin-right: 20px;
+    animation: fadeIn 0.5s; /* Fade-in animation for the form */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Slightly move up */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00ffff; /* Neon cyan color */
+    animation: slideIn 0.5s; /* Slide-in animation for the title */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Slide from the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ff77ff; /* Neon magenta color */
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444; /* Darker border */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px; /* Slightly larger font */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent input fields */
+    color: #ffffff; /* White text in inputs */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth background transition */
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    background-color: rgba(255, 255, 255, 0.3); /* Lighter background on focus */
+    transform: scale(1.02); /* Slightly enlarge on focus */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+button {
+    background-color: #00ff00; /* Neon green */
+    color: #0b0c11; /* Dark text for contrast */
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Add transform and box-shadow for effect */
+}
+
+button:hover {
+    background-color: #00cc00; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly grow the button */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Neon glow on hover */
+}
+
+select {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent for consistency */
+    color: #ffffff; /* White text in selects */
+}
+
+/* Styles for displaying score result */
+.score-display {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Darker background */
+    border-radius: 8px;
+    white-space: pre-wrap; /* Preserve whitespace and newlines */
+    color: #00ff00; /* Neon green text */
+    animation: pulse 1.5s infinite; /* Pulsing animation */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Slightly grow */
+    }
+}
+
+/* Styles for database selection */
+.database-container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for consistency */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    animation: fadeIn 0.5s; /* Fade-in animation for database container */
+}
+
+.database-title {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #00ffff; /* Neon cyan title */
+    animation: slideIn 0.5s; /* Slide-in animation for the title */
+}
+
+.database-content {
+    max-height: 500px; 
+    overflow-y: auto; 
+}
+
+.record {
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent for records */
+    display: flex;
+    justify-content: space-between;
+    animation: slideIn 0.5s; /* Slide-in animation for each record */
+}
+
+.record-details {
+    display: flex;
+    gap: 15px;
+}
+
+.record-date {
+    font-weight: bold;
+    color: #ff77ff; /* Neon magenta for the date */
+}
+
+.record-pseudo,
+.record-score,
+.record-rnd {
+    color: #ffffff; /* White text for all record details */
+}
