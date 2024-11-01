@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="classement.css">
+
+<body>
+    <form id="scoreForm">
+        <label for="username">Pseudo:</label>
+        <input type="text" id="username" required>
+
+        <label for="game">Game:</label>
+        <select name="game" class="game" id="game" required>select a game</select>
+
+        <label for="scoreResult">Score Result:</label>
+        <textarea id="scoreResult" rows="5" placeholder="" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <div class="database-container">
+        <h2 class="database-title">Select a Game</h2>
+
+        <select name="game" class="game" id="databaseList">select a database</select>
+
+        <div class="database-content" id="databaseContent">
+            
+        </div>
+    </div>
+    <script type="module" src="database.js"></script>
+</body>
+
+</html>
