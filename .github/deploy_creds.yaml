@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Déclenche le déploiement lors d'un push sur la branche "main"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Inject Firebase Config
+        run: |
+          echo "window.firebaseConfig = {" > ./site/script/config.js
+          echo "  apiKey: '${{ secrets.APIKEY }}'," >> ./site/script/config.js
+          echo "  authDomain: '${{ secrets.AUTHDOMAIN }}'," >> ./site/script/config.js
+          echo "  databaseURL: '${{ secrets.DATABASEURL }}'," >> ./site/script/config.js
+          echo "  projectId: '${{ secrets.PROJECTID }}'," >> ./site/script/config.js
+          echo "  storageBucket: '${{ secrets.STORAGEBUCKET }}'," >> ./site/script/config.js
+          echo "  messagingSenderId: '${{ secrets.MESSAGINGSENDERID }}'," >> ./site/script/config.js
+          echo "  appId: '${{ secrets.APPID }}'" >> ./site/script/config.js
+          echo "};" >> ./site/script/config.js
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: /root  # Spécifie le dossier du site statique
