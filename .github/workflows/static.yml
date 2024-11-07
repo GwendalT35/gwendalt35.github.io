@@ -28,14 +28,16 @@ jobs:
         uses: actions/configure-pages@v5
       
       - name: Create Firebase config file
-        env:
-          FIREBASE_APIKEY: ${{ secrets.APIKEY }}
-          FIREBASE_AUTHDOMAIN: ${{ secrets.AUTHDOMAIN }}
-          FIREBASE_DATABASEURL: ${{ secrets.DATABASEURL }}
-          FIREBASE_PROJECTID: ${{ secrets.PROJECTID }}
-          FIREBASE_STORAGEBUCKET: ${{ secrets.STORAGEBUCKET }}
-          FIREBASE_MESSAGINGSENDERID: ${{ secrets.MESSAGINGSENDERID }}
-          FIREBASE_APPID: ${{ secrets.APPID }}
+        run: |
+          echo "export const firebaseConfig = {" > config.js
+          echo "    apiKey: '${{ secrets.FIREBASE_APIKEY }}'," >> config.js
+          echo "    authDomain: '${{ secrets.FIREBASE_AUTHDOMAIN }}'," >> config.js
+          echo "    databaseURL: '${{ secrets.FIREBASE_DATABASEURL }}'," >> config.js
+          echo "    projectId: '${{ secrets.FIREBASE_PROJECTID }}'," >> config.js
+          echo "    storageBucket: '${{ secrets.FIREBASE_STORAGEBUCKET }}'," >> config.js
+          echo "    messagingSenderId: '${{ secrets.FIREBASE_MESSAGINGSENDERID }}'," >> config.js
+          echo "    appId: '${{ secrets.FIREBASE_APPID }}'" >> config.js
+          echo "};" >> config.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
