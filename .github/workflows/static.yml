@@ -37,7 +37,7 @@ jobs:
           echo "    storageBucket: '${{ secrets.FIREBASE_STORAGEBUCKET }}'," >> ./site/DailyGames/config.js
           echo "    messagingSenderId: '${{ secrets.FIREBASE_MESSAGINGSENDERID }}'," >> ./site/DailyGames/config.js
           echo "    appId: '${{ secrets.FIREBASE_APPID }}'" >> ./site/DailyGames/config.js
-          echo "};" >> config.js
+          echo "};" >> ./site/DailyGames/config.js
 
       - name: Verify config.js
         run: |
