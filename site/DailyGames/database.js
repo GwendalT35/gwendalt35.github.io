@@ -76,7 +76,7 @@ document.getElementById("databaseList").addEventListener("change", async functio
                     console.log(error);
                 }
                 let gameNumber = record.result.match(/#\d{1,}|\d{1,}/)[0];
-
+                if(!eval(strScore)) strScore = String(parseInt(strScore.split("/")[1])+1) + String(strScore.split("/")[1]);
                 scores.push({
                     username: record.username,
                     score: strScore, // Assurez-vous que le score est numérique
