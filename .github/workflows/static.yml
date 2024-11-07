@@ -29,20 +29,20 @@ jobs:
       
       - name: Create Firebase config file
         run: |
-          echo "export const firebaseConfig = {" > ./site\DailyGames\config.js
-          echo "    apiKey: '${{ secrets.FIREBASE_APIKEY }}'," >> ./site\DailyGames\config.js
-          echo "    authDomain: '${{ secrets.FIREBASE_AUTHDOMAIN }}'," >> ./site\DailyGames\config.js
-          echo "    databaseURL: '${{ secrets.FIREBASE_DATABASEURL }}'," >> ./site\DailyGames\config.js
-          echo "    projectId: '${{ secrets.FIREBASE_PROJECTID }}'," >> ./site\DailyGames\config.js
-          echo "    storageBucket: '${{ secrets.FIREBASE_STORAGEBUCKET }}'," >> ./site\DailyGames\config.js
-          echo "    messagingSenderId: '${{ secrets.FIREBASE_MESSAGINGSENDERID }}'," >> ./site\DailyGames\config.js
-          echo "    appId: '${{ secrets.FIREBASE_APPID }}'" >> ./site\DailyGames\config.js
+          echo "export const firebaseConfig = {" > ./site/DailyGames/config.js
+          echo "    apiKey: '${{ secrets.FIREBASE_APIKEY }}'," >> ./site/DailyGames/config.js
+          echo "    authDomain: '${{ secrets.FIREBASE_AUTHDOMAIN }}'," >> ./site/DailyGames/config.js
+          echo "    databaseURL: '${{ secrets.FIREBASE_DATABASEURL }}'," >> ./site/DailyGames/config.js
+          echo "    projectId: '${{ secrets.FIREBASE_PROJECTID }}'," >> ./site/DailyGames/config.js
+          echo "    storageBucket: '${{ secrets.FIREBASE_STORAGEBUCKET }}'," >> ./site/DailyGames/config.js
+          echo "    messagingSenderId: '${{ secrets.FIREBASE_MESSAGINGSENDERID }}'," >> ./site/DailyGames/config.js
+          echo "    appId: '${{ secrets.FIREBASE_APPID }}'" >> ./site/DailyGames/config.js
           echo "};" >> config.js
 
       - name: Verify config.js
         run: |
-          cat config.js
-          
+          cat ./site/DailyGames/config.js
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
