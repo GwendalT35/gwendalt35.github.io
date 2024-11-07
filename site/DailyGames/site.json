@@ -4,13 +4,15 @@
       "name": "WhenTaken",
       "url": "https://whentaken.com/",
       "image": "./image/WhenTaken.png",
-      "classement" : true
+      "classement" : true,
+      "sort": "DESC"
     },
     {
       "name": "Searchle",
       "url": "https://searchle.net/",
       "image": "./image/Searchle.png",
-      "classement" : true
+      "classement" : true,
+      "sort": "ASC"
     },
     {
       "name": "Travle",
@@ -82,7 +84,8 @@
       "name": "Le Mot",
       "url": "https://wordle.louan.me/",
       "image": "./image/LEmot.png",
-      "classement" : true
+      "classement" : true,
+      "sort": "ASC"
     },
     {
       "name": "Mathler",
@@ -107,7 +110,7 @@
       "url": "https://sutom.nocle.fr/",
       "image": "./image/Sutom.png",
       "classement" : true,
-      "regex": "/^#SUTOM #\\d{4} [1-6]\/6/"
+      "sort": "ASC"
     },
     {
       "name": "Framed",
@@ -137,7 +140,8 @@
       "name": "Statele",
       "url": "https://statele.teuteuf.fr/",
       "image": "./image/Statele.png",
-      "classement" : true
+      "classement" : true,
+      "sort": "ASC"
     },
     {
       "name": "WhereTakenUSA",
@@ -227,7 +231,8 @@
       "name": "Tradle",
       "url": "https://games.oec.world/en/tradle/",
       "image": "./image/tradle.png",
-      "classement" : true
+      "classement" : true,
+      "sort": "ASC"
     },
     {
       "name": "Timeguessr",
@@ -293,7 +298,8 @@
       "name": "WhereTaken",
       "url": "https://wheretaken.com/",
       "image": "./image/WhereTaken.png",
-      "classement" : true
+      "classement" : true,
+      "sort": "DESC"
     },
     {
       "name": "Gaps",
