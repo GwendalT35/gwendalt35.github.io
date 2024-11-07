@@ -110,8 +110,7 @@ window.addEventListener("load", (event) => {
                     : scores;
             
                 // Convertir en nombre et trier les scores de manière décroissante
-                filteredScores.forEach(record => record.score = parseFloat(record.score) || 0);
-                filteredScores.sort((a, b) => b.score - a.score);
+                filteredScores.sort((a, b) => eval(b.score) - eval(a.score));
             
                 // Efface le contenu précédent
                 podiumDiv.innerHTML = "";
