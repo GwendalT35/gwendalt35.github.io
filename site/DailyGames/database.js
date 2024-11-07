@@ -85,9 +85,9 @@ window.addEventListener("load", (event) => {
             
                 // Ajouter les jours au selecteur
                 gameNumbers.forEach(number => {
-                    if (!number.match(/^#/)) number = "#"+number;
                     const option = document.createElement("option");
                     option.value = number;
+                    if (!number.match(/^#/)) number = "#"+number;
                     option.textContent = `${number}`;
                     gameNumberSelect.appendChild(option);
                 });
