@@ -101,32 +101,32 @@ window.addEventListener("load", (event) => {
             });
             
 
-            // Fonction pour afficher les scores filtrés
             function displayScores(scores) {
                 const selectedGameNumber = gameNumberSelect.value;
-                
+            
                 // Filtrer les scores par numéro de jeu sélectionné
                 const filteredScores = selectedGameNumber
                     ? scores.filter(record => record.date === selectedGameNumber)
                     : scores;
-                
-                // Trier les scores décroissants
+            
+                // Convertir en nombre et trier les scores de manière décroissante
+                filteredScores.forEach(record => record.score = parseFloat(record.score) || 0);
                 filteredScores.sort((a, b) => b.score - a.score);
-
+            
                 // Efface le contenu précédent
                 podiumDiv.innerHTML = "";
                 listDiv.innerHTML = "";
-
+            
                 filteredScores.forEach((record, index) => {
                     const recordDiv = document.createElement("div");
                     recordDiv.classList.add("record");
-
+            
                     // Classes spécifiques pour le podium
                     if (index === 0) recordDiv.classList.add("first-place");
                     else if (index === 1) recordDiv.classList.add("second-place");
                     else if (index === 2) recordDiv.classList.add("third-place");
                     else recordDiv.classList.add("place");
-
+            
                     recordDiv.innerHTML = `
                         <div class="record-details">
                             <div class="record-date">#${selectedDatabase} ${record.date}</div>
@@ -134,7 +134,7 @@ window.addEventListener("load", (event) => {
                             <div class="record-score">${record.score}</div>
                         </div>
                     `;
-
+            
                     if (index < 3) {
                         podiumDiv.appendChild(recordDiv);
                     } else {
@@ -142,6 +142,7 @@ window.addEventListener("load", (event) => {
                     }
                 });
             }
+            
 
             // Écouteur de changement de sélection pour recalculer le podium
             gameNumberSelect.addEventListener("change", () => {

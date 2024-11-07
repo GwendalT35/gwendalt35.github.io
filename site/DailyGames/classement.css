@@ -1,27 +1,34 @@
+/* Styles généraux */
+
 body {
-    font-family: 'Roboto', sans-serif; /* Modern font */
-    background-color: #0b0c11; /* Dark background for cyberpunk feel */
+    font-family: 'Roboto', sans-serif;
+    background-color: #0b0c11;
     margin: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
-    color: #ffffff; /* Bright text color for contrast */
-    overflow: hidden; /* Prevent scrollbars */
+    color: #ffffff;
+    overflow: hidden;
 }
 
-/* Styles spécifiques pour le menu */
+/* Menu désactivé sur les petits écrans */
+@media (max-width: 768px) {
+    #menu-container {
+        display: none; /* Masquer le menu sur les petits écrans */
+    }
+}
 
-/* Conteneur du menu */
+/* Styles pour le menu sur ordinateur */
 #menu-container {
     z-index: 10;
     position: absolute;
     top: 50px;
     left: 10px;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre semi-transparent */
+    background-color: rgba(0, 0, 0, 0.8);
     width: 220px;
-    border: 2px solid #00ffff; /* Bordure cyan néon */
+    border: 2px solid #00ffff;
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2);
     display: flex;
@@ -30,31 +37,33 @@ body {
 
 #menu-container a {
     padding: 10px;
-    color: #ffffff; /* Texte blanc pour contraste */
+    color: #ffffff;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s;
 }
 
 #menu-container a:hover {
-    background-color: #444; /* Survol en gris foncé */
+    background-color: #444;
 }
+
+/* Autres styles de la page (inclus inchangés) */
 
 
 form {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Neon glow effect */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
     width: 300px;
     margin-right: 20px;
-    animation: fadeIn 0.5s; /* Fade-in animation for the form */
+    animation: fadeIn 0.5s;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px); /* Slightly move up */
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
@@ -65,14 +74,14 @@ form {
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #00ffff; /* Neon cyan color */
-    animation: slideIn 0.5s; /* Slide-in animation for the title */
+    color: #00ffff;
+    animation: slideIn 0.5s;
 }
 
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateX(-50px); /* Slide from the left */
+        transform: translateX(-50px);
     }
     to {
         opacity: 1;
@@ -84,7 +93,7 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #ff77ff; /* Neon magenta color */
+    color: #ff77ff;
 }
 
 input[type="text"],
@@ -93,58 +102,57 @@ select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #444; /* Darker border */
+    border: 1px solid #444;
     border-radius: 6px;
     box-sizing: border-box;
-    font-size: 16px; /* Slightly larger font */
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent input fields */
-    color: #ffffff; /* White text in inputs */
-    transition: background-color 0.3s, transform 0.2s; /* Smooth background transition */
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 input[type="text"]:focus,
 textarea:focus,
 select:focus {
-    background-color: rgba(255, 255, 255, 0.3); /* Lighter background on focus */
-    transform: scale(1.02); /* Slightly enlarge on focus */
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
 }
 
 textarea {
-    resize: vertical; /* Allow vertical resizing only */
+    resize: vertical;
 }
 
 button {
-    background-color: #00ff00; /* Neon green */
-    color: #0b0c11; /* Dark text for contrast */
+    background-color: #00ff00;
+    color: #0b0c11;
     border: none;
     padding: 10px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Add transform and box-shadow for effect */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 button:hover {
-    background-color: #00cc00; /* Darker green on hover */
-    transform: scale(1.05); /* Slightly grow the button */
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Neon glow on hover */
+    background-color: #00cc00;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
 }
 
 select, option {
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent for consistency */
-    color: #000000; /* White text in selects */
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000000;
 }
 
-/* Styles for displaying score result */
 .score-display {
     margin-top: 20px;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.7); /* Darker background */
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 8px;
-    white-space: pre-wrap; /* Preserve whitespace and newlines */
-    color: #00ff00; /* Neon green text */
-    animation: pulse 1.5s infinite; /* Pulsing animation */
+    white-space: pre-wrap;
+    color: #00ff00;
+    animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
@@ -152,29 +160,28 @@ select, option {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05); /* Slightly grow */
+        transform: scale(1.05);
     }
 }
 
-/* Styles for database selection */
 .database-container {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for consistency */
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-    animation: fadeIn 0.5s; /* Fade-in animation for database container */
+    animation: fadeIn 0.5s;
 }
 
 .database-title {
     text-align: center;
     margin-bottom: 10px;
-    color: #00ffff; /* Neon cyan title */
-    animation: slideIn 0.5s; /* Slide-in animation for the title */
+    color: #00ffff;
+    animation: slideIn 0.5s;
 }
 
 .database-content {
-    max-height: 500px; 
-    overflow-y: auto; 
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 /* Conteneur pour le podium */
@@ -184,7 +191,7 @@ select, option {
     align-items: flex-end;
     gap: 10px;
     margin-top: 20px;
-    margin-bottom: 20px; /* Espace entre le podium et la liste */
+    margin-bottom: 20px;
 }
 
 /* Styles podium pour les trois premières places */
@@ -196,11 +203,10 @@ select, option {
     flex-direction: column;
     justify-content: flex-end;
     padding: 15px;
-    color: #000; /* Couleur de texte par défaut */
+    color: #000;
     overflow: hidden;
-    font-weight: bold; /* Texte plus épais pour lisibilité */
-    font-size: 1.1em; /* Texte légèrement plus grand */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Ombre pour améliorer le contraste */
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .first-place {
@@ -208,6 +214,7 @@ select, option {
     height: 150px;
     width: 100px;
     background-color: gold;
+    font-size: 1.2em; /* Plus grand pour la première place */
 }
 
 .second-place {
@@ -215,6 +222,7 @@ select, option {
     height: 120px;
     width: 80px;
     background-color: silver;
+    font-size: 1em; /* Taille de police moyenne */
 }
 
 .third-place {
@@ -222,7 +230,7 @@ select, option {
     height: 100px;
     width: 70px;
     background-color: chocolate;
-
+    font-size: 0.9em; /* Plus petit pour la troisième place */
 }
 
 /* Style pour chaque champ de détail (date, pseudo, score) dans le podium */
@@ -239,19 +247,23 @@ select, option {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px; /* Espacement entre les lignes */
+    gap: 8px;
 }
 
 .record-date,
 .record-pseudo,
 .record-score {
-    font-size: 1em;
-    color: inherit; /* Utilise la couleur spécifique de chaque podium */
+    font-size: 0.8em;
+    color: inherit;
     text-align: center;
-    padding: 5px 0; /* Ajoute un peu d’espace autour pour éviter que le texte touche les bords */
+    padding: 5px 0;
+    max-width: 100%; /* Limite la largeur au conteneur */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
 }
 
-/* Liste des autres scores */
+
 .score-list {
     display: flex;
     flex-direction: column;
@@ -269,7 +281,6 @@ select, option {
     color: #ffffff;
 }
 
-/* Ajustement des détails dans la liste des scores */
 .place .record-details {
     display: flex;
     justify-content: space-between;
@@ -285,4 +296,39 @@ select, option {
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 0 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Make forms stack vertically */
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form, .database-container {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Podium adjustments */
+    .podium {
+        gap: 5px;
+    }
+
+    .first-place {
+        height: 120px;
+        width: 80px;
+    }
+
+    .second-place {
+        height: 100px;
+        width: 70px;
+    }
+
+    .third-place {
+        height: 80px;
+        width: 60px;
+    }
 }
