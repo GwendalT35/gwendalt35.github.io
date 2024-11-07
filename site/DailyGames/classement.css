@@ -11,6 +11,36 @@ body {
     overflow: hidden; /* Prevent scrollbars */
 }
 
+/* Styles spécifiques pour le menu */
+
+/* Conteneur du menu */
+#menu-container {
+    z-index: 10;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond sombre semi-transparent */
+    width: 220px;
+    border: 2px solid #00ffff; /* Bordure cyan néon */
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#menu-container a {
+    padding: 10px;
+    color: #ffffff; /* Texte blanc pour contraste */
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+#menu-container a:hover {
+    background-color: #444; /* Survol en gris foncé */
+}
+
+
 form {
     background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
     padding: 20px;

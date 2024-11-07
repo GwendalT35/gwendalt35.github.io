@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="classement.css">
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="classement.css">
+</head>
 <body>
+    <!-- Conteneur du menu -->
+    <div id="menu-container" class="hidden">
+        <a href="../../index.html">Retour à l'accueil</a>
+        <a href="./index.html">Retour à la sélection de jeu</a>
+    </div>
+
+    <!-- Formulaire de score -->
     <form id="scoreForm">
         <label for="username">Pseudo:</label>
         <input type="text" id="username" required>
 
-        <label for="game">Game:</label>
-        <select name="game" class="game" id="game" required>select a game
+        <label for="game">Jeu:</label>
+        <select name="game" class="game" id="game" required>
+            <option value="">Sélectionner un jeu</option>
         </select>
 
-        <label for="scoreResult">Score Result:</label>
-        <textarea id="scoreResult" rows="5" placeholder="" required></textarea>
+        <label for="scoreResult">Résultat:</label>
+        <textarea id="scoreResult" rows="5" required></textarea>
 
-        <button type="submit">Submit</button>
+        <button type="submit">Soumettre</button>
     </form>
 
-
+    <!-- Conteneur de la base de données -->
     <div class="database-container">
-        <h2 class="database-title">Select a Game</h2>
+        <h2 class="database-title">Sélectionner un jeu</h2>
 
-        <select name="game" class="game" id="databaseList">select a database
-            <option></option>
+        <select name="game" class="game" id="databaseList">
+            <option value="">Sélectionner une base de données</option>
         </select>
-        <!-- Dropdown for selecting by game number -->
         <select id="gameNumberSelect">
-            <option value="">Select a day</option>
-            <!-- Options will be generated dynamically here -->
+            <option value="">Sélectionner un jour</option>
         </select>
+
         <div class="database-content" id="databaseContent">
-            <div class="podium" id="podium">
-            </div>
+            <div class="podium" id="podium"></div>
         </div>
-        <div class="score-list" id="scoreList">
-        </div>
+
+        <div class="score-list" id="scoreList"></div>
     </div>
+
     <script type="module" src="database.js"></script>
 </body>
-
 </html>
