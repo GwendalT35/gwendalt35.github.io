@@ -151,7 +151,7 @@
     },
     {
       "name": "Flagle",
-      "url": "https://www.flagle.io/",
+      "url": "https://flagle-game.com/",
       "image": "./image/Flagle.png",
       "classement" : true,
       "sort": "ASC"
