@@ -8,15 +8,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+    min-height: 100vh; /* Utilise min-height pour s'adapter aux écrans plus petits */
     color: #ffffff;
-    overflow: hidden;
+    overflow-x: hidden; /* Désactive seulement le scroll horizontal */
 }
 
 /* Menu désactivé sur les petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 1360px) {
     #menu-container {
-        display: none; /* Masquer le menu sur les petits écrans */
+        display: none !important; /* Masquer le menu sur les petits écrans */
     }
 }
 
@@ -48,7 +48,6 @@ body {
 }
 
 /* Autres styles de la page (inclus inchangés) */
-
 
 form {
     background: rgba(255, 255, 255, 0.1);
@@ -260,10 +259,9 @@ select, option {
     max-width: 100%; /* Limite la largeur au conteneur */
     overflow: hidden;
     text-overflow: ellipsis;
-    /* white-space: nowrap; */
 }
 
-
+/* Liste des autres scores */
 .score-list {
     display: flex;
     flex-direction: column;
@@ -304,6 +302,7 @@ select, option {
     body {
         flex-direction: column;
         align-items: center;
+        overflow-y: auto; /* Activer le scroll vertical sur mobile */
     }
 
     form, .database-container {
@@ -312,7 +311,7 @@ select, option {
         margin-bottom: 20px;
     }
 
-    /* Podium adjustments */
+    /* Podium adjustments pour les écrans mobiles */
     .podium {
         gap: 5px;
     }
