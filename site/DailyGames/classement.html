@@ -10,7 +10,8 @@
         <input type="text" id="username" required>
 
         <label for="game">Game:</label>
-        <select name="game" class="game" id="game" required>select a game</select>
+        <select name="game" class="game" id="game" required>select a game
+        </select>
 
         <label for="scoreResult">Score Result:</label>
         <textarea id="scoreResult" rows="5" placeholder="" required></textarea>
@@ -22,10 +23,19 @@
     <div class="database-container">
         <h2 class="database-title">Select a Game</h2>
 
-        <select name="game" class="game" id="databaseList">select a database</select>
-
+        <select name="game" class="game" id="databaseList">select a database
+            <option></option>
+        </select>
+        <!-- Dropdown for selecting by game number -->
+        <select id="gameNumberSelect">
+            <option value="">Select a day</option>
+            <!-- Options will be generated dynamically here -->
+        </select>
         <div class="database-content" id="databaseContent">
-            
+            <div class="podium" id="podium">
+            </div>
+        </div>
+        <div class="score-list" id="scoreList">
         </div>
     </div>
     <script type="module" src="database.js"></script>

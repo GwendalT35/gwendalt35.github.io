@@ -101,9 +101,9 @@ button:hover {
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Neon glow on hover */
 }
 
-select {
+select, option {
     background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent for consistency */
-    color: #ffffff; /* White text in selects */
+    color: #000000; /* White text in selects */
 }
 
 /* Styles for displaying score result */
@@ -147,29 +147,112 @@ select {
     overflow-y: auto; 
 }
 
+/* Conteneur pour le podium */
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Espace entre le podium et la liste */
+}
+
+/* Styles podium pour les trois premières places */
+.first-place,
+.second-place,
+.third-place {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+    color: #000; /* Couleur de texte par défaut */
+    overflow: hidden;
+    font-weight: bold; /* Texte plus épais pour lisibilité */
+    font-size: 1.1em; /* Texte légèrement plus grand */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Ombre pour améliorer le contraste */
+}
+
+.first-place {
+    order: 1;
+    height: 150px;
+    width: 100px;
+    background-color: gold;
+}
+
+.second-place {
+    order: 0;
+    height: 120px;
+    width: 80px;
+    background-color: silver;
+}
+
+.third-place {
+    order: 2;
+    height: 100px;
+    width: 70px;
+    background-color: chocolate;
+
+}
+
+/* Style pour chaque champ de détail (date, pseudo, score) dans le podium */
 .record {
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent for records */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-place .record-details,
+.second-place .record-details,
+.third-place .record-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* Espacement entre les lignes */
+}
+
+.record-date,
+.record-pseudo,
+.record-score {
+    font-size: 1em;
+    color: inherit; /* Utilise la couleur spécifique de chaque podium */
+    text-align: center;
+    padding: 5px 0; /* Ajoute un peu d’espace autour pour éviter que le texte touche les bords */
+}
+
+/* Liste des autres scores */
+.score-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.place {
     display: flex;
     justify-content: space-between;
-    animation: slideIn 0.5s; /* Slide-in animation for each record */
+    padding: 8px;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: #ffffff;
 }
 
-.record-details {
+/* Ajustement des détails dans la liste des scores */
+.place .record-details {
     display: flex;
-    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9em;
 }
 
-.record-date {
-    font-weight: bold;
-    color: #ff77ff; /* Neon magenta for the date */
-}
-
-.record-pseudo,
-.record-score,
-.record-rnd {
-    color: #ffffff; /* White text for all record details */
+.place .record-date,
+.place .record-pseudo,
+.place .record-score {
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
 }

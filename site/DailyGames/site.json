@@ -1,249 +1,341 @@
 {
   "websites": [
     {
-      "name": "When Taken",
+      "name": "WhenTaken",
       "url": "https://whentaken.com/",
-      "image": "./image/WhenTaken.png"
+      "image": "./image/WhenTaken.png",
+      "classement" : true
     },
     {
       "name": "Searchle",
       "url": "https://searchle.net/",
-      "image": "./image/Searchle.png"
+      "image": "./image/Searchle.png",
+      "classement" : true
     },
     {
       "name": "Travle",
       "url": "https://travle.earth/",
-      "image": "./image/Travle.png"
+      "image": "./image/Travle.png",
+      "classement" : false
     },
     {
-      "name": "One Piecedle",
+      "name": "OnePiecedle",
       "url": "https://onepiecedle.net/",
-      "image": "./image/OnePieceDle.png"
+      "image": "./image/OnePieceDle.png",
+      "classement" : false
     },
     {
-      "name": "Wikipedia Speerun",
+      "name": "WikipediaSpeerun",
       "url": "https://wikispeedruns.com/",
-      "image": "./image/WikiSpeed.png"
+      "image": "./image/WikiSpeed.png",
+      "classement" : false
     },
     {
-      "name": "The Wikipedia Game",
+      "name": "TheWikipediaGame",
       "url": "https://www.thewikigame.com/",
-      "image": "./image/WikiGame.png"
+      "image": "./image/WikiGame.png",
+      "classement" : false
     },
     {
       "name": "GameDle",
       "url": "https://www.gamedle.wtf/",
-      "image": "./image/Gamedle.png"
+      "image": "./image/Gamedle.png",
+      "classement" : false
     },
     {
       "name": "Invoker Game",
       "url": "https://www.invokergame.com/",
-      "image": "./image/Invoker.png"
+      "image": "./image/Invoker.png",
+      "classement" : false
     },
     {
-      "name": "Cookie Clicker",
+      "name": "CookieClicker",
       "url": "https://orteil.dashnet.org/cookieclicker/",
-      "image": "./image/Cookie.png"
+      "image": "./image/Cookie.png",
+      "classement" : false
     },
     {
       "name": "Loldle",
       "url": "https://loldle.net/",
-      "image": "./image/Loldle.png"
+      "image": "./image/Loldle.png",
+      "classement" : false
     },
     {
       "name": "Rankdle",
       "url": "https://rankdle.com/",
-      "image": "./image/Rankle.png"
+      "image": "./image/Rankle.png",
+      "classement" : false
     },
     {
       "name": "Pedantle",
       "url": "https://cemantle.certitudes.org/pedantle",
-      "image": "./image/Pedantle.png"
+      "image": "./image/Pedantle.png",
+      "classement" : false
     },
     {
       "name": "Pedantix",
       "url": "https://cemantix.certitudes.org/pedantix",
-      "image": "./image/Pedantix.png"
+      "image": "./image/Pedantix.png",
+      "classement" : false
     },
     {
-      "name": "Le mot",
+      "name": "Le Mot",
       "url": "https://wordle.louan.me/",
-      "image": "./image/LEmot.png"
+      "image": "./image/LEmot.png",
+      "classement" : true
     },
     {
       "name": "Mathler",
       "url": "https://www.mathler.com/",
-      "image": "./image/Mathler.png"
+      "image": "./image/Mathler.png",
+      "classement" : false
     },
     {
       "name": "Heardle",
       "url": "https://heardlewordle.io/",
-      "image": "./image/Heardle.png"
+      "image": "./image/Heardle.png",
+      "classement" : false
     },
     {
       "name": "Tusmo",
       "url": "https://www.tusmo.xyz/",
-      "image": "./image/Tusmo.png"
+      "image": "./image/Tusmo.png",
+      "classement" : false
     },
     {
       "name": "Sutom",
       "url": "https://sutom.nocle.fr/",
-      "image": "./image/Sutom.png"
+      "image": "./image/Sutom.png",
+      "classement" : true,
+      "regex": "/^#SUTOM #\\d{4} [1-6]\/6/"
     },
     {
       "name": "Framed",
       "url": "https://framed.wtf/",
-      "image": "./image/framed.png"
+      "image": "./image/framed.png",
+      "classement" : false
     },
     {
       "name": "Cemantle",
       "url": "https://cemantle.certitudes.org/",
-      "image": "./image/Cemantle.png"
+      "image": "./image/Cemantle.png",
+      "classement" : false
     },
     {
       "name": "Cemantix",
       "url": "https://cemantix.certitudes.org/",
-      "image": "./image/Cemantix.png"
+      "image": "./image/Cemantix.png",
+      "classement" : false
     },
     {
       "name": "Smiterino",
       "url": "http://smiterino.com/",
-      "image": "./image/Smiterino.png"
+      "image": "./image/Smiterino.png",
+      "classement" : false
     },
     {
       "name": "Statele",
       "url": "https://statele.teuteuf.fr/",
-      "image": "./image/Statele.png"
+      "image": "./image/Statele.png",
+      "classement" : true
     },
     {
-      "name": "Where Taken USA",
+      "name": "WhereTakenUSA",
       "url": "https://wheretakenusa.teuteuf.fr/",
-      "image": "./image/WhereTakenUSA.png"
+      "image": "./image/WhereTakenUSA.png",
+      "classement" : false
     },
     {
       "name": "Flagle",
       "url": "https://www.flagle.io/",
-      "image": "./image/Flagle.png"
+      "image": "./image/Flagle.png",
+      "classement" : true
     },
     {
       "name": "Geogrid",
       "url": "https://www.geogridgame.com/",
-      "image": "./image/Geogrid.png"
+      "image": "./image/Geogrid.png",
+      "classement" : false
     },
     {
       "name": "Emovi",
       "url": "https://emovi.teuteuf.fr/",
-      "image": "./image/Emovi.png"
+      "image": "./image/Emovi.png",
+      "classement" : false
     },
     {
       "name": "Metaflora",
       "url": "https://flora.metazooa.com/game?EnterGame=",
-      "image": "./image/Metaflora.png"
+      "image": "./image/Metaflora.png",
+      "classement" : false
     },
     {
       "name": "Metazooa",
       "url": "https://metazooa.com/game?EnterGame=",
-      "image": "./image/Metazooa.png"
+      "image": "./image/Metazooa.png",
+      "classement" : false
     },
     {
       "name": "Spotle",
       "url": "https://spotle.io/",
-      "image": "./image/Spotle.png"
+      "image": "./image/Spotle.png",
+      "classement" : false
     },
     {
-      "name": "combinations",
+      "name": "Combinations",
       "url": "https://combinations.org/#google_vignette",
-      "image": "./image/Combinations.png"
+      "image": "./image/Combinations.png",
+      "classement" : false
     },
     {
       "name": "1jour1film",
       "url": "https://1jour1film.fr/",
-      "image": "./image/1jour1film.png"
+      "image": "./image/1jour1film.png",
+      "classement" : false
     },
     {
-      "name": "colorfle",
+      "name": "Colorfle",
       "url": "https://colorfle.com/",
-      "image": "./image/colorfle.png"
+      "image": "./image/colorfle.png",
+      "classement" : false
     },
     {
-      "name": "circuitsgame",
+      "name": "CircuitsGame",
       "url": "https://circuitsgame.com/",
-      "image": "./image/circuits.png"
+      "image": "./image/circuits.png",
+      "classement" : false
     },
     {
-      "name": "betweenle",
+      "name": "Betweenle",
       "url": "https://betweenle.com/",
-      "image": "./image/betweenle.png"
+      "image": "./image/betweenle.png",
+      "classement" : false
     },
     {
-      "name": "moviegrid",
+      "name": "Moviegrid",
       "url": "https://moviegrid.io/",
-      "image": "./image/moviegrid.png"
+      "image": "./image/moviegrid.png",
+      "classement" : false
     },
     {
-      "name": "guessthegame",
+      "name": "GuessTheGame",
       "url": "https://guessthe.game/",
-      "image": "./image/guessthegame.png"
+      "image": "./image/guessthegame.png",
+      "classement" : false
     },
     {
-      "name": "tradle",
+      "name": "Tradle",
       "url": "https://games.oec.world/en/tradle/",
-      "image": "./image/tradle.png"
+      "image": "./image/tradle.png",
+      "classement" : true
     },
     {
-      "name": "timeguessr",
+      "name": "Timeguessr",
       "url": "https://timeguessr.com/game-settings",
-      "image": "./image/timeguessr.png"
+      "image": "./image/timeguessr.png",
+      "classement" : false
     },
     {
-      "name": "synoptix",
+      "name": "Synoptix",
       "url": "https://www.synoptix.fr/",
-      "image": "./image/synoptix.png"
+      "image": "./image/synoptix.png",
+      "classement" : false
     },
     {
-      "name": "themely",
+      "name": "Themely",
       "url": "https://themely.se/days",
-      "image": "./image/themely.png"
+      "image": "./image/themely.png",
+      "classement" : false
     },
     {
-      "name": "pimiento",
+      "name": "Pimiento",
       "url": "https://pimiento.janvier.tv/fr",
-      "image": "./image/pimiento.png"
+      "image": "./image/pimiento.png",
+      "classement" : false
     },
     {
-      "name": "wikitrivia",
+      "name": "Wikitrivia",
       "url": "https://wikitrivia.tomjwatson.com/",
-      "image": "./image/wikitrivia.png"
+      "image": "./image/wikitrivia.png",
+      "classement" : false
     },
     {
-      "name": "countryle",
+      "name": "Countryle",
       "url": "https://countryle.com/",
-      "image": "./image/countryle.png"
+      "image": "./image/countryle.png",
+      "classement" : false
     },
     {
-      "name": "narutodle",
+      "name": "Narutodle",
       "url": "https://narutodle.net/",
-      "image": "./image/narutodle.png"
+      "image": "./image/narutodle.png",
+      "classement" : false
     },
     {
-      "name": "pokedle",
+      "name": "Pokedle",
       "url": "https://pokedle.net/",
-      "image": "./image/pokedle.png"
+      "image": "./image/pokedle.png",
+      "classement" : false
     },
     {
-      "name": "smashdle",
+      "name": "Smashdle",
       "url": "https://smashdle.net/",
-      "image": "./image/smashdle.png"
+      "image": "./image/smashdle.png",
+      "classement" : false
     },
     {
-      "name": "dotadle",
+      "name": "Dotadle",
       "url": "https://dotadle.net/",
-      "image": "./image/dotadle.png"
+      "image": "./image/dotadle.png",
+      "classement" : false
     },
     {
-      "name": "Where Taken",
-      "url": "https://wheretaken.teuteuf.fr/",
-      "image": "./image/WhereTaken.png"
+      "name": "WhereTaken",
+      "url": "https://wheretaken.com/",
+      "image": "./image/WhereTaken.png",
+      "classement" : true
+    },
+    {
+      "name": "Gaps",
+      "url": "https://gaps.wtf/",
+      "image": "./image/gaps.png",
+      "classement" : false
+    },
+    {
+      "name": "Faces",
+      "url": "https://faces.wtf/",
+      "image": "./image/Faces.png",
+      "classement" : false
+    },
+    {
+      "name": "Episode",
+      "url": "https://episode.wtf/",
+      "image": "./image/Episode.png",
+      "classement" : false
+    },
+    {
+      "name": "Plotwords",
+      "url": "https://plotwords.com/daily",
+      "image": "./image/Plotword.png",
+      "classement" : false
+    },
+    {
+      "name": "Spots",
+      "url": "https://spots.wtf/",
+      "image": "./image/Spots.png",
+      "classement" : false
+    },
+    {
+      "name": "Decipher",
+      "url": "https://decipher.wtf/",
+      "image": "./image/Decipher.png",
+      "classement" : false
+    },
+    {
+      "name": "Terradle",
+      "url": "https://www.terradle.com/",
+      "image": "./image/Terradle.png",
+      "classement" : false
     }
   ]
 }
