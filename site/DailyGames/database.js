@@ -66,25 +66,40 @@ document.getElementById("databaseList").addEventListener("change", async functio
             snapshot.forEach((childSnapshot) => {
                 const record = childSnapshot.val();
                 
-                let strScore = record.result.match(/(\D+)\/\d|(\d+)\/(\d+)/)[0];
+                // Extraire le score avec une vérification de `match`
+                let strScore = `0/${record.result.split("/")[1]}`; // Valeur par défaut en cas de format inattendu
+                const scoreMatch = record.result.match(/(\d+)\/(\d+)/);
+                
+                if (scoreMatch) {
+                    strScore = scoreMatch[0];
+                } else {
+                    console.warn("Format inattendu pour le score:", record.result);
+                }
+            
                 try {
-                    console.log(String(parseInt(strScore.split("/")[1])+1) + `/${strScore.split("/")[1]}`);
-                    
-                    if (!eval(strScore)) strScore = String(parseInt(strScore.split("/")[1])+1) + `/${strScore.split("/")[1]}`
+                    const [numerator, denominator] = strScore.split("/").map(Number);
+            
+                    // Si le score est 0, on le met à `denominator + 1` pour l'incrémenter
+                    if (numerator === 0) {
+                        strScore = `${denominator + 1}/${denominator}`;
+                    }
+                } catch (error) {
+                    console.log("Erreur lors de la manipulation du score:", error);
                 }
-                catch(error){
-                    console.log(error);
-                }
-                let gameNumber = record.result.match(/#\d{1,}|\d{1,}/)[0];
-                if(!eval(strScore)) strScore = String(parseInt(strScore.split("/")[1])+1) + String(strScore.split("/")[1]);
+                // Extraction et formatage du numéro de jeu
+                let gameNumber;
+                if (record.result.match(/^#SEARCHLE/)) gameNumber = record.result.split(" ")[1];
+                else gameNumber = (record.result.match(/#\d+/) || ["#0"])[0];
+                
                 scores.push({
                     username: record.username,
-                    score: strScore, // Assurez-vous que le score est numérique
+                    score: strScore,
                     date: gameNumber
                 });
-
+            
                 gameNumbers.push(gameNumber);
             });
+            
 
             // Trier les jours de manière décroissante (le plus récent d'abord)
             gameNumbers = Array.from(new Set(gameNumbers)); // Enlever les doublons
