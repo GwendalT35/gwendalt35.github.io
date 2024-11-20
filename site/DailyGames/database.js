@@ -19,10 +19,18 @@ window.addEventListener("load", (event) => {
         const username = document.getElementById("username").value;
         const scoreResult = document.getElementById("scoreResult").value.toUpperCase();
         
+
         let firstLineGrapper = scoreResult.match(/(^#.*)|(.*?(\d+\s*\/\s*\d+))/g);
         let handleEmojiResult = firstLineGrapper.length > 1 ? firstLineGrapper[1].match(/(\D+)\/\d|(\d+)\/(\d+)/) : null;
         let goodResult = firstLineGrapper[0] + (handleEmojiResult ? " " + handleEmojiResult[0] : "");
 
+        // Échapper les caractères spéciaux pour éviter des erreurs dans la regex
+        const escapedGame = game.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+        // Créer la regex dynamiquement
+        const regex = new RegExp(`\\b${escapedGame}\\b`, 'i'); // 'i' pour ignorer la casse si nécessaire
+        const isSameGame = regex.test(scoreResult);
+        
         const data = {
             username: username,
             result: goodResult,
@@ -30,8 +38,10 @@ window.addEventListener("load", (event) => {
         };
 
         try {
+            if (!isSameGame) throw new Error("Wrong Combination Game / Score");
+            
             const gameRef = ref(database, `games/${game}/scores`);
-            // await push(gameRef, data);
+            await push(gameRef, data);
             alert("Data successfully saved!");
             document.getElementById("username").value = "";
             document.getElementById("scoreResult").value = "";
@@ -46,7 +56,6 @@ window.addEventListener("load", (event) => {
 document.getElementById("databaseList").addEventListener("change", async function () {
     
     const selectedDatabase = this.value.toUpperCase();
-    console.log("New Score to  show : ", selectedDatabase);
     const podiumDiv = document.getElementById("podium");
     const listDiv = document.getElementById("scoreList");
     podiumDiv.innerHTML = "";
@@ -144,19 +153,16 @@ document.getElementById("databaseList").addEventListener("change", async functio
 
 });
 
-function displayScores(scores = "", selectedDatabase = "") {
+function displayScores(scores = "", selectedDatabase) {
     // Si `scores` ou `selectedDatabase` est vide, déclenche l'événement `change`
-    if (scores === "" || selectedDatabase === "") {
-        console.log("Added Score ! Show score ! ", selectedDatabase);
+    if (scores === "") {
         const databaseList = document.getElementById("databaseList");
         if (selectedDatabase) {
             databaseList.value = selectedDatabase; // Sélectionne la base de données
-            console.log("Added Score ! Show score ! ", databaseList);
         }
         
         const event = new Event('change');
         let test = databaseList.dispatchEvent(event); // Déclenche l'événement `change`
-        console.log("Event fired ? ", test);
         
         return; // Arrête l'exécution pour éviter d'afficher des scores vides
     }
