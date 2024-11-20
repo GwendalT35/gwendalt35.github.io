@@ -31,10 +31,12 @@ window.addEventListener("load", (event) => {
 
         try {
             const gameRef = ref(database, `games/${game}/scores`);
-            await push(gameRef, data);
+            // await push(gameRef, data);
             alert("Data successfully saved!");
             document.getElementById("username").value = "";
             document.getElementById("scoreResult").value = "";
+
+            displayScores("", game);
         } catch (error) {
             alert("Error adding document:", error);
         }
@@ -42,17 +44,18 @@ window.addEventListener("load", (event) => {
 
 // Afficher les valeurs de la base de données
 document.getElementById("databaseList").addEventListener("change", async function () {
+    
     const selectedDatabase = this.value.toUpperCase();
+    console.log("New Score to  show : ", selectedDatabase);
     const podiumDiv = document.getElementById("podium");
     const listDiv = document.getElementById("scoreList");
-    const json = await getJson();
     podiumDiv.innerHTML = "";
     listDiv.innerHTML = "";
 
     if (selectedDatabase) {
+        
         const scoresRef = ref(database, `games/${selectedDatabase}/scores`);
         const gameNumberSelect = document.getElementById("gameNumberSelect");
-        const gameNumbers = new Set();
         let scores = [];
 
         onValue(scoresRef, (snapshot) => {
@@ -122,60 +125,7 @@ document.getElementById("databaseList").addEventListener("change", async functio
             // Trier les scores selon l'ordre défini dans le JSON
             displayScores(scores, selectedDatabase); // Passer aussi le jeu sélectionné
         });
-
-        // Fonction de tri et d'affichage des scores
-        function displayScores(scores, selectedDatabase) {
-            const selectedGameNumber = gameNumberSelect.value;
-
-            // Filtrer les scores par numéro de jeu sélectionné
-            const filteredScores = selectedGameNumber
-                ? scores.filter(record => record.date === selectedGameNumber)
-                : scores;
-
-            // Récupérer l'objet correspondant au jeu sélectionné dans le JSON
-           
-            const selectedWebsite = json.websites.find(website => website.name.toUpperCase() === selectedDatabase);
-            const sortOrder = selectedWebsite ? selectedWebsite.sort : "ASC"; // Par défaut, on trie en ASC
-
-            // Convertir en nombre et trier les scores de manière décroissante ou croissante
-            filteredScores.sort((a, b) => {
-                if (sortOrder === "ASC") {
-                    return eval(a.score) - eval(b.score); // Tri croissant
-                } else {
-                    return eval(b.score) - eval(a.score); // Tri décroissant
-                }
-            });
-
-            // Efface le contenu précédent
-            podiumDiv.innerHTML = "";
-            listDiv.innerHTML = "";
-
-            // Afficher les scores dans l'ordre trié
-            filteredScores.forEach((record, index) => {
-                const recordDiv = document.createElement("div");
-                recordDiv.classList.add("record");
-
-                // Classes spécifiques pour le podium
-                if (index === 0) recordDiv.classList.add("first-place");
-                else if (index === 1) recordDiv.classList.add("second-place");
-                else if (index === 2) recordDiv.classList.add("third-place");
-                else recordDiv.classList.add("place");
-
-                recordDiv.innerHTML = `
-                    <div class="record-details">
-                        <div class="record-date">#${selectedDatabase} ${record.date}</div>
-                        <div class="record-pseudo">${record.username}</div>
-                        <div class="record-score">${record.score}</div>
-                    </div>
-                `;
-
-                if (index < 3) {
-                    podiumDiv.appendChild(recordDiv);
-                } else {
-                    listDiv.appendChild(recordDiv);
-                }
-            });
-        }
+       
 
         // Écouteur de changement de sélection pour recalculer le podium
         gameNumberSelect.addEventListener("change", () => {
@@ -194,10 +144,64 @@ document.getElementById("databaseList").addEventListener("change", async functio
 
 });
 
+function displayScores(scores = "", selectedDatabase = "") {
+    // Si `scores` ou `selectedDatabase` est vide, déclenche l'événement `change`
+    if (scores === "" || selectedDatabase === "") {
+        console.log("Added Score ! Show score ! ", selectedDatabase);
+        const databaseList = document.getElementById("databaseList");
+        if (selectedDatabase) {
+            databaseList.value = selectedDatabase; // Sélectionne la base de données
+            console.log("Added Score ! Show score ! ", databaseList);
+        }
+        
+        const event = new Event('change');
+        let test = databaseList.dispatchEvent(event); // Déclenche l'événement `change`
+        console.log("Event fired ? ", test);
+        
+        return; // Arrête l'exécution pour éviter d'afficher des scores vides
+    }
+    
+    // Logique d'affichage des scores si `scores` et `selectedDatabase` sont valides
+    const selectedGameNumber = document.getElementById("gameNumberSelect").value;
+
+    // Filtrer et trier les scores
+    const filteredScores = selectedGameNumber
+        ? scores.filter(record => record.date === selectedGameNumber)
+        : scores;
+
+    // Tri et affichage des scores
+    const podiumDiv = document.getElementById("podium");
+    const listDiv = document.getElementById("scoreList");
+    podiumDiv.innerHTML = "";
+    listDiv.innerHTML = "";
+
+    filteredScores.forEach((record, index) => {
+        const recordDiv = document.createElement("div");
+        recordDiv.classList.add("record");
+        if (index === 0) recordDiv.classList.add("first-place");
+        else if (index === 1) recordDiv.classList.add("second-place");
+        else if (index === 2) recordDiv.classList.add("third-place");
+        else recordDiv.classList.add("place");
+
+        recordDiv.innerHTML = `
+            <div class="record-details">
+                <div class="record-date">#${selectedDatabase} ${record.date}</div>
+                <div class="record-pseudo">${record.username}</div>
+                <div class="record-score">${record.score}</div>
+            </div>
+        `;
+
+        if (index < 3) {
+            podiumDiv.appendChild(recordDiv);
+        } else {
+            listDiv.appendChild(recordDiv);
+        }
+    });
+}
+
 // Fonction pour récupérer les jeux
 async function getGame() {
     const json = await getJson();
-    console.log(json);
     
     const gameListe = document.getElementsByClassName('game')[0];
     const dbListe = document.getElementsByClassName('game')[1];
@@ -213,7 +217,7 @@ async function getGame() {
         gameListe.appendChild(optionGame);
 
         const optionDb = document.createElement('option');
-        optionDb.value = site.name;
+        optionDb.value = site.name.toUpperCase();
         optionDb.textContent = site.name;
         dbListe.appendChild(optionDb);
     });
