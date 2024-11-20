@@ -153,7 +153,33 @@ document.getElementById("databaseList").addEventListener("change", async functio
 
 });
 
-function displayScores(scores = "", selectedDatabase) {
+async function displayScores(scores = "", selectedDatabase) {
+    const json = await getJson(); // Récupère l'objet JSON
+    console.log(json);
+    
+    const websites = json.websites; // Extrait le tableau "websites"
+    
+    // Vérifie que "websites" est bien un tableau
+    if (!Array.isArray(websites)) {
+        console.error("Les données JSON sont incorrectes : 'websites' n'est pas un tableau.");
+        return;
+    }
+
+    // Trouve la configuration de la base de données sélectionnée
+    const databaseConfig = websites.find(db => {
+        console.log(db.name.toUpperCase(), selectedDatabase, db.name.toUpperCase() === selectedDatabase);
+        return db.name.toUpperCase() === selectedDatabase; // Comparaison insensible à la casse
+    });
+
+    console.log(databaseConfig);
+    
+    if (!databaseConfig) {
+        console.error(`Aucune configuration trouvée pour la base de données '${selectedDatabase}'.`);
+        return;
+    }
+
+    const sortOrder = databaseConfig.sort; // Par défaut, tri en ordre croissant
+    
     // Si `scores` ou `selectedDatabase` est vide, déclenche l'événement `change`
     if (scores === "") {
         const databaseList = document.getElementById("databaseList");
@@ -162,7 +188,7 @@ function displayScores(scores = "", selectedDatabase) {
         }
         
         const event = new Event('change');
-        let test = databaseList.dispatchEvent(event); // Déclenche l'événement `change`
+        databaseList.dispatchEvent(event); // Déclenche l'événement `change`
         
         return; // Arrête l'exécution pour éviter d'afficher des scores vides
     }
@@ -170,11 +196,24 @@ function displayScores(scores = "", selectedDatabase) {
     // Logique d'affichage des scores si `scores` et `selectedDatabase` sont valides
     const selectedGameNumber = document.getElementById("gameNumberSelect").value;
 
-    // Filtrer et trier les scores
-    const filteredScores = selectedGameNumber
+    // Filtrer les scores selon le jeu sélectionné
+    let filteredScores = selectedGameNumber
         ? scores.filter(record => record.date === selectedGameNumber)
         : scores;
 
+    // Trier les scores selon l'ordre défini (ASC ou DESC)
+    filteredScores.sort((a, b) => {
+        // Extraire la partie numérique du score avant le "/"
+        const scoreA = parseInt(a.score.split('/')[0], 10);
+        const scoreB = parseInt(b.score.split('/')[0], 10);
+
+        return sortOrder === "ASC" 
+            ? scoreA - scoreB // Tri ascendant
+            : scoreB - scoreA; // Tri descendant
+    });
+    
+    console.log(filteredScores);
+    
     // Tri et affichage des scores
     const podiumDiv = document.getElementById("podium");
     const listDiv = document.getElementById("scoreList");
@@ -204,6 +243,7 @@ function displayScores(scores = "", selectedDatabase) {
         }
     });
 }
+
 
 // Fonction pour récupérer les jeux
 async function getGame() {
