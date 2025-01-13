@@ -51,7 +51,7 @@ jobs:
       
       - name: Verify CineSwag config.js
         run: |
-          cat ./site/CineSwag/config.js
+          cat ./site/CineSwag/js/config.js
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
