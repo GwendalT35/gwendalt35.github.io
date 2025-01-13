@@ -1,0 +1,180 @@
+/* Reset de base */
+body, h1, h2, h3, p, ul, li, input, button, select, form, section, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps principal */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Section principale */
+section {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus {
+    border-color: #007BFF;
+}
+
+form input[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* Boutons de navigation */
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    background: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Sélecteur de langue */
+div {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+select {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border-color: #007BFF;
+}
+
+/* Liste des films */
+ul#filmList {
+    list-style: none;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.film-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.film-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.film-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.film-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.film-item p {
+    font-size: 14px;
+    color: #666;
+    padding: 0 10px 10px;
+}
+
+/* Message lorsqu'il n'y a pas de résultats */
+.no-results {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    padding: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    section {
+        width: 100%;
+    }
+
+    ul#filmList {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP5</title>
+    <script type="module" src="./js/main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <form>
+            <label for="">Search for a film</label>
+            <input type="text" name="filmToSearch" id="filmToSearch" placeholder="enter film name">
+            <input type="submit" value="Search" id="btnSubmit">
+        </form>
+        <button id="btnPrevious">Previous page</button>
+        <button id="btnNext">Next page</button>
+        <div>
+            Display language
+            <select name="langue" id="selectLang">
+                <option value="fr-FR">Français</option>
+                <option value="en-US">Anglais (US)</option>
+                <option value="es-ES">Espagnole</option>
+                <option value="de-DE">Allemand</option>
+                <option value="kr-KR">Koreen</option>
+
+            </select>
+        </div>
+
+    </section>
+
+    <ul id="filmList">
+
+    </ul>
+</body>
+</html>
