@@ -45,9 +45,9 @@ jobs:
 
       - name:  Create CineSwag config file
         run: |
-            echo "export const tmdbConfig = {" > ./site/CineSwag/config.js
-            echo "    apiKey: '${{ secrets.TMDB_API_KEY }}'," >> ./site/CineSwag/config.js
-            echo "};" >> ./site/CineSwag/config.js
+            echo "export const tmdbConfig = {" > ./site/CineSwag/js/config.js
+            echo "    apiKey: '${{ secrets.TMDB_API_KEY }}'," >> ./site/CineSwag/js/config.js
+            echo "};" >> ./site/CineSwag/js/config.js
       
       - name: Verify CineSwag config.js
         run: |
