@@ -43,6 +43,11 @@ jobs:
         run: |
           cat ./site/DailyGames/config.js
 
+      - name:  Create CineSwag config file
+        run: |
+            echo "export const tmdbConfig = {" > ./site/CineSwag/config.js
+            echo "    apiKey: '${{ secrets.TMDB_API_KEY }}'," >> ./site/CineSwag/config.js
+            echo "};" >> ./site/CineSwag/config.js
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

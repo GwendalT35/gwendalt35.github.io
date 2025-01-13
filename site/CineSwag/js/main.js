@@ -1,4 +1,5 @@
 import TmdbApi from "./classes/TmdbApi.js";
+import { tmdbConfig } from './config.js';
 
 const domFilmList = document.getElementById("filmList");
 const searchInput = document.getElementById("filmToSearch");
@@ -7,7 +8,7 @@ const btnPrevious = document.getElementById("btnPrevious");
 const btnNext = document.getElementById("btnNext");
 const selectLang = document.getElementById("selectLang");
 
-let tmdb = new TmdbApi("eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZWI4NDc2N2RiNjY1MjA0ZWQwMDIxNWFjOWNmZWNjYiIsIm5iZiI6MTczNDcwMjEyNi4zOTUsInN1YiI6IjY3NjU3NDJlMDNhM2FhNTzMDkwZDkzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._bp7jubeTh7S9EVESUUHBVy3axsDsS4zz5m_-GsgHHg");
+let tmdb = new TmdbApi(tmdbConfig.apiKey);
 let state = "suggestion";  // Keeps track of the state (whether we're viewing suggestions or search results)
 let pageNumber = 1;
 let maxPageNumber = 0;
