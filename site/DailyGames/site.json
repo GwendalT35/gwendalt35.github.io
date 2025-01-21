@@ -343,6 +343,12 @@
       "url": "https://www.terradle.com/",
       "image": "./image/Terradle.png",
       "classement" : false
+    },
+    {
+      "name": "Feetle",
+      "url": "https://feetle.lol/",
+      "image": "./image/feetle.png",
+      "classement" : false
     }
   ]
 }
