@@ -1,0 +1,89 @@
+/* styles.css — minimal cross-browser reset */
+
+/* Better box model */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make html/body full height if needed */
+html, body {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Sensible body defaults */
+body {
+    line-height: 1.5;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    color: inherit;
+    background: transparent;
+}
+
+/* Remove list and table defaults */
+ul, ol {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Media elements */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Form elements inherit font and basic reset */
+input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+/* Keep buttons clickable pointer by default */
+button, [type="button"], [type="submit"] {
+    cursor: pointer;
+}
+
+/* Links */
+a {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/* Fieldset/legend */
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+legend {
+    padding: 0;
+}
+
+/* Textareas: allow vertical resize by default */
+textarea {
+    resize: vertical;
+}
+
+/* Placeholder */
+::placeholder {
+    opacity: 1;
+    color: #999;
+}
+
+/* Hidden attribute */
+[hidden] {
+    display: none !important;
+}

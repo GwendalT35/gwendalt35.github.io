@@ -1,0 +1,94 @@
+.hoverImageCss {
+    background-image: url("../images/AVATAR_Default.png");
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+}
+.hoverImageCss:hover {
+    background-image: url("../images/AVATAR_Hover.png");
+}
+
+main {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: end;
+    width: 100vw;
+    height: 93vh;
+}
+
+.leftPart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    width: 50vw;
+    height: 100%;
+    left: 20px;
+    bottom: 20px;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 50vw;
+    height: auto;
+}
+.text p {
+    width: 100%;
+}
+
+.text1 {
+    font-size: 3.5vw;
+}
+.text2 {
+    font-size: 3.65vw;
+}
+
+.rightPart {
+    position: fixed; /* keep the right panel fixed to viewport */
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto; /* shrink to content instead of taking 50vw */
+    height: auto;
+    padding: 1rem;
+    z-index: 999;
+    pointer-events: none; /* let content inside control pointer events */
+    width: 50vw;
+    height: 100%;
+}
+
+#myCarousel {
+  position: fixed;           /* fixed to viewport so it's always at bottom-right */
+  bottom: 0;              /* small gap from the bottom edge */
+  right: 0;               /* small gap from the right edge */
+  width: 60vw; 
+  height: 90vh;
+  overflow: hidden;
+  z-index: 1000;
+  pointer-events: auto;      /* allow interaction with carousel */
+  border-radius: 30px 0 0 0 ;      /* optional: rounded corners */
+}
+
+#myCarousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* preserve image cover behavior */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ensure thisible slide is shown */
+#myCarousel img.active {
+  opacity: 1;
+  z-index: 2;
+}

@@ -1,0 +1,69 @@
+/* === IMAGES GÉNÉRALES === */
+.imageContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100vh;
+  width: auto;
+  position: relative;
+  z-index: -1;
+}
+
+/* par défaut : les images plein écran */
+.imageContainer > img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* exceptions : images à l’intérieur de la troisième slide */
+.imageContainer .thirdSlide img {
+  height: auto;
+}
+
+/* === CONFIGURATION SPÉCIFIQUE === */
+.imageContainer img:first-child {
+  width: 100vw;
+}
+
+.imageContainer img:nth-child(2) {
+  height: 50vh;
+}
+
+.imageContainer img:nth-child(3) {
+  justify-items: start;
+}
+
+/* === TROISIÈME SLIDE === */
+.thirdSlide {
+  display: flex;
+  flex-direction: column;
+  height: 75vh; /* occupe toute la hauteur visible */
+  width: 75vw;
+}
+
+/* Image du haut — prend 50 % de la hauteur */
+.thirdSlide > img:first-child {
+  height: 50%;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Bloc du bas — deux images côte à côte */
+.thirdSlide .imgDiv {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2vw;
+  width: 100%;
+}
+
+/* Images du bas — partagent l’espace */
+.thirdSlide .imgDiv img {
+  flex: 1;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}

@@ -1,0 +1,8 @@
+.imageContainer img:nth-child(2) {
+    height: 66vh;
+}
+
+.imageContainer img:last-child {
+    position: relative;
+    bottom: 5vh;
+}

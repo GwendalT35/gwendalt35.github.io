@@ -1,0 +1,18 @@
+.imageContainer{
+    gap: 5vw;
+}
+
+.secondSlide {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.secondSlide img {
+  flex: 1; /* chaque image prend la même hauteur */
+  width: 80vw;
+  object-fit: contain; /* garde le bon ratio sans déformation */
+  display: block;
+  margin-right: 5vw;
+}

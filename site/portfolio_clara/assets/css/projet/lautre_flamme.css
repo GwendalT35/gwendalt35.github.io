@@ -1,0 +1,6 @@
+.imageContainer img:last-child {
+  object-fit: contain;   /* garde les proportions */
+  transform: scale(0.66); /* ← dézoom à 50 % */
+  transform-origin: center center; /* centre le “zoom” */
+  transition: transform 0.5s ease;
+}

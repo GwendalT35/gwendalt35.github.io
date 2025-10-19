@@ -1,0 +1,7 @@
+.imageContainer img:first-child {
+  width: 50vw;
+}
+
+.imageContainer img:nth-child(6) {
+    margin-right: 2vw;
+}

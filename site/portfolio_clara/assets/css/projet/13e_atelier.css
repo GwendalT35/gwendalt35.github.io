@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'RuddyBold';
+    src: url("../../00_FONTS/13e_atelier/Ruddy_Bold.otf") format("opentype");
+
+}
+
+@font-face {
+    font-family: 'SagaceRegular';
+    src: url("../../00_FONTS/13e_atelier/Sagace-Regular.otf") format("opentype");
+    
+}
+
+.imgContainer img:first-child {
+    width: 65vw;
+}
+
+.secondeSlide {
+    width: 75vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+}
+
+.topDiv {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 35vh;
+    left: 10vw;
+    right: 10vw;
+    max-width: 50vw;
+    gap: 5vw;
+}
+
+.img-topDiv {
+    display: fixed;
+    width: 35vw;
+    background-image: url('../../images/page_13e_atelier/Colas.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer !important;
+    z-index: 9999;
+}
+
+.img-topDiv:hover {
+    background-image: url('../../images/page_13e_atelier/Calque_1.png');
+}
+
+.text-topDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    text-align: justify;
+    
+}
+
+
+.downDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vw;
+}
+
+.downDiv img {
+    object-fit: contain;
+    width: auto;
+    height: 15vh;
+
+}
+
+.thirdSlide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+.thirdSlide img {
+    object-fit: contain;
+    width: 50vw;
+    height: auto;
+}
+
+.fourthSlide {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    width: 50vw;
+    margin: 5vw;
+    gap: 5vw;
+}
+
+.left-part {
+    position: relative;
+    width: 100%;
+}
+.left-part .show{
+    font-family: 'RuddyBold';
+    font-size: calc(3 * var(--font-size-default));
+}
+
+.left-part .show:nth-child(1){
+    font-size: calc(1.5 * var(--font-size-default));
+}
+
+.left-part .show:nth-child(2){
+    font-size: calc(3 * var(--font-size-default));
+}
+
+
+.left-part .show:nth-child(3){
+    font-size: calc(3 * var(--font-size-default));
+}
+
+.left-part img {
+    position: absolute;
+    left: 0;
+    top: 5vh;
+    z-index: -1;
+    object-fit: contain;
+    height: 100%;
+    width: 50vw;
+}
+
+
+.right-part {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    width: 50%;
+}
+
+.right-part .show2 {
+    font-family: 'SagaceRegular';
+}
+
+.right-part .show2:nth-child(1){
+    font-size: calc(1.5 * var(--font-size-default));
+}
+
+.right-part .show2:nth-child(2){
+    font-size: calc(3 * var(--font-size-default));
+}
+
+
+.right-part .show2:nth-child(3){
+    font-size: calc(3 * var(--font-size-default));
+}
+
+.colorContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+  grid-template-rows: repeat(3, 1fr); /* 3 lignes */
+  gap: 1rem;
+  height: 50vh;
+  width: 75%;
+  place-items: center; /* centre tout */
+  margin-bottom: 5vh;
+}
+
+/* Grand rond à gauche, qui occupe toute la colonne 1 */
+.colorContainer div:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / span 3; /* occupe les 3 lignes */
+  width: 7vw;
+  height: 100%;
+  aspect-ratio: 1 / 1; /* garde le cercle parfait */
+  background-color: rgb(0, 55, 255);
+  border-radius: 15vw;
+}
+
+/* Les 3 petits ronds à droite */
+.colorContainer div:nth-child(2),
+.colorContainer div:nth-child(3),
+.colorContainer div:nth-child(4) {
+  grid-column: 2;
+  width: 7vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+/* Couleurs spécifiques */
+.colorContainer div:nth-child(2) {
+  grid-row: 1;
+  background-color: rgb(217, 217, 217);
+}
+
+.colorContainer div:nth-child(3) {
+  grid-row: 2;
+  background-color: white;
+}
+
+.colorContainer div:nth-child(4) {
+  grid-row: 3;
+  background-color: black;
+}
+
+

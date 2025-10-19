@@ -1,0 +1,218 @@
+/* === MAIN LAYOUT === */
+main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  user-select: none;
+  z-index: -100;
+}
+
+/* === CURSORS === */
+.mainCursorLeft {
+  cursor: url('../../cursor/fleche-gauche.png') 32 32, auto;
+}
+
+.mainCursorRight {
+  cursor: url('../../cursor/fleche-droite.png') 32 32, auto;
+}
+
+/* === GENERIC === */
+.hidden {
+  visibility: hidden;
+}
+
+/* === RETURN BUTTON === */
+.return-button {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  left: 20px;
+  top: 20px;
+  gap: 20px;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  width: auto;
+}
+
+.return-button svg {
+  width: auto;
+  height: 3vh;
+}
+
+.return-button p {
+  font-family: 'MaisonNeueBook', sans-serif;
+  font-size: 1.5vw;
+  color: var(--font-color);
+  margin: 0;
+  height: 3vh;
+}
+
+/* === IMAGES === */
+.imageContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100vh;
+  width: auto;
+  position: relative;
+  z-index: -1;
+}
+
+.imageContainer img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* === NAVIGATION BUTTONS === */
+.navContainer {
+  position: fixed;
+  bottom: 8vh;
+  left: 2vw;
+  right: 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 90;
+}
+
+.nav-btn {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--font-color);
+  font-family: 'MaisonNeueBook', sans-serif;
+  font-size: 1rem;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 2vw;
+  width: 3vw;
+  transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+.nav-btn svg {
+  width: 3vw;
+  height: auto;
+  min-width: 24px;
+  stroke: var(--font-color);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.nav-btn p {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover générique : montre le texte */
+.nav-btn:hover p {
+  opacity: 1;
+}
+
+/* Hover spécifique à chaque côté */
+.previous-btn:hover {
+  width: 11vw;
+}
+
+.next-btn:hover {
+  width: 10vw;
+}
+
+.previous-btn {
+  justify-content: flex-start;
+}
+
+.next-btn {
+  justify-content: flex-end;
+}
+
+/* === FOOTER === */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  z-index: 100;
+
+  /* visible : seulement le titre + ligne */
+  transform: translateY(calc(100% - 7vh));
+  height: 7vh;
+  transition: transform 0.5s ease, height 0.5s ease;
+  border-top: 1px solid var(--font-color);
+  cursor: text;
+  overflow: hidden;
+}
+
+/* au hover : remonte et agrandit */
+footer:hover {
+  transform: translateY(0);
+  height: 15vh; /* ← tu peux ajuster selon la taille de ta description */
+}
+
+/* quand le footer s’ouvre, masque les boutons dessous */
+footer:hover ~ .navContainer {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* ligne de séparation déjà intégrée dans la bordure */
+.separator {
+  display: none;
+}
+
+/* conteneur interne */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--font-color);
+}
+
+/* bloc titre */
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2vh 2vw;
+  font-family: "CooperBTLight", sans-serif;
+  font-size: calc(1.2 * var(--font-size-default));
+  color: var(--font-color);
+  transition: color 0.3s ease;
+}
+
+/* description masquée visuellement */
+.description {
+  max-width: 80vw;
+  margin: 0 2vw 1vh;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  font-family: 'MaisonNeueBook', sans-serif;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+/* survol du footer : la description apparaît */
+footer:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* effet de couleur */
+footer:hover .title {
+  color: var(--accent-color, var(--font-color));
+}
+

@@ -1,0 +1,43 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 7vh;
+}
+
+.name {
+    font-family: 'MaisonNeueBold', sans-serif;
+    font-size: calc(1.5rem * var(--font-size-default));
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5vw;
+}
+
+.menu li:hover {
+    font-family: 'MaisonNeueBook', sans-serif;
+    font-size: calc(1rem * var(--font-size-default));
+    cursor: pointer;
+}
+
+.activePage {
+    font-family: 'MaisonNeueBold', sans-serif;
+    font-size: calc(1.1rem * var(--font-size-default));
+    cursor: pointer;
+}
+
+.separator {
+    height:1px;
+    background:var(--font-color);
+    width:100%;
+}

@@ -1,0 +1,26 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.text{
+    margin-top: 2vh;
+}
+
+.masongrid {
+  position: relative;
+  width: 98vw;
+}
+
+.mason-item {
+  overflow: hidden;
+}
+
+.mason-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

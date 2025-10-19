@@ -1,0 +1,61 @@
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5vh;
+}
+
+.links{
+    position: fixed;
+    bottom: 2vh;
+    left: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.icon {
+     width: 32px;
+}
+
+.linkContainer:hover {
+    .icon {
+            rotate: -45deg;
+    }
+}
+
+.linkContainer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.textLink {
+    font-family: 'CooperBTLight', sans-serif;
+    font-size: calc(1.1 * var(--font-size-default));
+}
+
+.bullet {
+    color: #F8A08D;
+}
+
+.date {
+    font-family: 'MaisonNeueLight', sans-serif;
+    --font-date-size: 14px;
+    font-size: calc(0.58 * var(--font-size-default));
+    color: var(--font-color);
+}
+
+.projectImage {
+  position: fixed;
+  bottom: 2vw;
+  right: 2vw;
+  width: 50vw;
+  height: 86vh;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+  border-radius: 30px;
+  object-fit: cover;
+}

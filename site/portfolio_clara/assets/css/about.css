@@ -1,0 +1,48 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px);
+    gap: 30px;
+}
+
+.hoverImageCss {
+    background-image: url("../images/AVATAR_Default.png");
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+}
+.hoverImageCss:hover {
+    background-image: url("../images/AVATAR_Hover.png");
+}
+
+.nameMain{
+    font-family: 'MaisonNeueBold', sans-serif;
+    font-size: 4rem;
+}
+
+.birthdate {
+    font-family: 'CooperBTLight', sans-serif;
+    font-size: 2rem;
+}
+
+.content {
+  font-family: 'MaisonNeueLight', sans-serif;
+  display: flex;
+  flex-direction: row; /* sur une seule ligne */
+  flex-wrap: wrap; /* permet de passer à la ligne si trop long */
+  gap: 0.3em; /* espace naturel entre les mots/éléments */
+  max-width: 50vw;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  display: inline;
+}
+
+.contentDiv{
+    max-width: 50vw;
+}
+.highlight {
+  font-family: 'CooperBTBook', sans-serif;
+  display: inline;
+}

@@ -1,0 +1,70 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  z-index: 100;
+
+  /* cache la description par décalage vertical */
+  transform: translateY(calc(100% - 7vh)); /* visible: juste le titre + la ligne */
+  transition: transform 0.5s ease;
+  border-top: 1px solid var(--font-color);
+  cursor: text;
+}
+
+/* au hover, tout le contenu remonte */
+footer:hover {
+  transform: translateY(0);
+}
+
+/* ligne de séparation déjà intégrée dans la bordure */
+.separator {
+  display: none;
+}
+
+/* conteneur interne */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--font-color);
+}
+
+/* bloc titre */
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2vh 2vw;
+  font-family: "CooperBTLight", sans-serif;
+  font-size: calc(1.2 * var(--font-size-default));
+  color: var(--font-color);
+  transition: color 0.3s ease;
+}
+
+/* description masquée visuellement (overflow) */
+.description {
+  max-width: 80vw;
+  margin: 0 2vw 1vh;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  font-family: 'MaisonNeueBook', sans-serif;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none; /* empêche de déclencher le hover par erreur */
+}
+
+/* quand on survole le footer : la description apparaît */
+footer:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* petit effet visuel pour renforcer la lisibilité */
+footer:hover .title {
+  color: var(--accent-color, var(--font-color));
+}

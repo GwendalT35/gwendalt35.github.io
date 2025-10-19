@@ -1,0 +1,42 @@
+/* Coopper = stylish */
+@font-face {
+    font-family: 'CooperBTLight';
+    src: url("../00_FONTS/Cooper-Light-BT/cooper_bt_light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'CooperBTBook';
+    src: url("../00_FONTS/Cooper-Light-BT/cooperb.ttf") format("truetype");
+}
+
+
+/* maison = straight */
+@font-face {
+    font-family: 'MaisonNeueLight';
+    src: url("../00_FONTS/MAISON-NEUE/fonnts.com-Maison_Neue_Light.ttf"), format("truetype");
+}
+
+@font-face {
+    font-family: 'MaisonNeueBook';
+    src: url("../00_FONTS/MAISON-NEUE/fonnts.com-Maison_Neue_Book.ttf") format("truetype");
+}
+@font-face {
+    font-family: 'MaisonNeueBold';
+    src: url("../00_FONTS/MAISON-NEUE/fonnts.com-Maison_Neue_Bold.ttf") format("truetype");
+}
+
+
+:root{
+    --background-color:#f5f5f5;
+    --font-color:#6D1F28;
+    --font-size-default: 24px;
+
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-family: 'CooperBTLight', sans-serif;
+    font-size: var(--font-size-default);
+}
+
