@@ -12,11 +12,11 @@ main {
 
 /* === CURSORS === */
 .mainCursorLeft {
-  cursor: url('../../cursor/fleche-gauche.png') 32 32, auto;
+  cursor: url('../../cursor/fleche-gauche.png') 16 16, auto;
 }
 
 .mainCursorRight {
-  cursor: url('../../cursor/fleche-droite.png') 32 32, auto;
+  cursor: url('../../cursor/fleche-droite.png') 16 16, auto;
 }
 
 /* === GENERIC === */

@@ -27,6 +27,7 @@
 
 .imageContainer img:nth-child(2) {
   height: 50vh;
+  margin-left: 3vw;
 }
 
 .imageContainer img:nth-child(3) {
