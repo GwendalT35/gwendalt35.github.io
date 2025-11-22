@@ -6,15 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
     <link rel="stylesheet" href="../assets/css/projet/projects.css">
     <link rel="stylesheet" href="../assets/css/projet/bureau_des_temps.css">
     <script src="../assets/js/horizontalscroll.js" defer></script>
-
+    <script src="../assets/js/responsive.js" defer></script>
     <title>Portfolio</title>
 </head>
-
 <body id="horizontalscroll" >
-
+    <header>
+        <div class="menu">
+            <div class="name"><a href="../index.html">Clara Amoretti</a></div>
+            <button id="burgerIcon" aria-label="Ouvrir le menu"><span></span></button>
+            <nav id="site-nav">
+                <ul>
+                    <li><a href="../projets.html">projets</a></li>
+                    <li><a href="../others.html">autres</a></li>
+                    <li><a href="../about.html">à propos</a></li>
+                    <li><a href="../contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div role="separator" aria-hidden="true" class="separator"></div>
+    </header>
     <main>
         <a href="../projets.html" class="return-button">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -23,6 +37,11 @@
             <p>Projets</p>
         </a>
 
+        <div class="linkContainer">
+            <p class="textLink">Bureau des temps</p>
+            <p class="bullet">•</p>
+            <p class="date">jan 2024</p>
+        </div>
         <div class="imageContainer">
             <img src="../assets/images/page_bureau des temps/frame_119_172106.jpg" alt="" height="20vh">
             <img src="../assets/images/page_bureau des temps/frame_118_996f15.png" alt="">
@@ -47,12 +66,12 @@
         </div>
     </main>
     <footer>
-        <div role="separator" aria-hidden="true" class="separator"></div>
         <div class="container">
             <div class="title">
                 <p class="projectName">Bureau des temps</p>
                 <p class="date">janvier 2024</p>
             </div>
+            <div class="arrow"></div>
             <p class="description">Ce projet a été mené en collaboration avec la ville de Rennes Metropole et son Bureau des temps afin de mettre en image des données et d'imaginer une exposition scénographiée.
 
 Nous avons mené nos recherches sur comment l'utilisation du numérique a flouté la distinction dentre vie profesionnelle et personnelle.

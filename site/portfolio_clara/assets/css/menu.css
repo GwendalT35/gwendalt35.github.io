@@ -1,43 +1,157 @@
+/* ===== Desktop ===== */
+header {
+  position: fixed;  
+  z-index: 200 !important;        
+  background: var(--background-color);
+}
+
 .menu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centre réellement la nav */
+  width: 100vw;
+  margin: 0;
+  padding: 0 5vw;
+  height: 7vh;
+  position: relative;
 }
 
 .name {
-    font-family: 'MaisonNeueBold', sans-serif;
-    font-size: calc(1.5rem * var(--font-size-default));
+  font-family: 'MaisonNeueBold', sans-serif;
+  font-size: calc(1.5rem * var(--font-size-default));
+  white-space: nowrap;
+  margin-right: auto; /* pousse nav vers le centre */
 }
 
-.menu ul{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5vw;
+.menu nav {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto; /* nav ne prend pas toute la place */
+}
+
+.menu nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 4vw;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li:hover {
-    font-family: 'MaisonNeueBook', sans-serif;
-    font-size: calc(1rem * var(--font-size-default));
-    cursor: pointer;
+  font-family: 'MaisonNeueBook', sans-serif;
+  font-size: calc(1rem * var(--font-size-default));
+  cursor: pointer;
 }
 
-.activePage {
-    font-family: 'MaisonNeueBold', sans-serif;
-    font-size: calc(1.1rem * var(--font-size-default));
-    cursor: pointer;
+.menu .activePage{
+  font-family: 'MaisonNeueBold', sans-serif;
+  font-size: calc(1.1rem * var(--font-size-default));
+  cursor: pointer;
 }
 
 .separator {
-    height:1px;
-    background:var(--font-color);
-    width:100%;
+  height: 1px;
+  background: var(--font-color);
+  width: 100%;
+}
+
+/* ======== BURGER ICON (2 barres, plus petit) ======== */
+#burgerIcon {
+  display: none;
+  position: relative;
+  width: 22px;
+  height: 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: var(--font-color);
+}
+
+#burgerIcon::before,
+#burgerIcon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--font-color);
+  border-radius: 2px;
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease, opacity 0.3s ease;
+}
+
+#burgerIcon::before { top: 0; }
+#burgerIcon::after  { bottom: 0; }
+
+.menu.is-open #burgerIcon::before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.menu.is-open #burgerIcon::after {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 425px) {
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand burger"
+      "nav   nav";
+    align-items: center;
+    padding: 10px 5vw 0 5vw;
+    height: auto;
+    position: relative;
+    z-index: 1000;
+    background-color: var(--background-color);
+    width: 100vw;
+    justify-content: space-between;
+  }
+
+  .name {
+    grid-area: brand;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: calc(1.4rem * var(--font-size-default));
+    margin-right: 0;
+  }
+
+  #burgerIcon {
+    grid-area: burger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Menu repliable */
+  .menu nav {
+    grid-area: nav;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    display: block;
+  }
+
+  .menu nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 16px 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .menu.is-open nav {
+    max-height: 60vh;
+  }
 }

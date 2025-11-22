@@ -5,3 +5,9 @@
 .imageContainer img:nth-child(6) {
     margin-right: 2vw;
 }
+
+@media (max-width: 425px) {
+  .imageContainer img:first-child {
+    width: auto;
+  }
+}

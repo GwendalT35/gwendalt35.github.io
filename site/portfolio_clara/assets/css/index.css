@@ -1,96 +1,204 @@
 .hoverImageCss {
     background-image: url("../images/AVATAR_Default.png");
-    width: 200px;
-    height: 200px;
+    /* Taille responsive */
+    width: clamp(120px, 20vw, 200px);
+    height: clamp(120px, 20vw, 200px);
     background-size: cover;
-    object-fit: fill;
+    background-position: center;
+    object-fit: cover;
 }
 .hoverImageCss:hover {
     background-image: url("../images/AVATAR_Hover.png");
 }
 
+/* ======= DESKTOP ======= */
 main {
     position: absolute;
     bottom: 0;
     left: 0;
     display: flex;
-    align-items: end;
+    align-items: flex-end;              /* place le contenu en bas */
+    justify-content: space-between;     /* équilibre gauche/droite */
     width: 100vw;
-    height: 93vh;
+    padding: 40px;
+    gap: 40px;
+    box-sizing: border-box;
 }
 
 .leftPart {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: flex-start;
+    justify-content: flex-end;          /* colle tout en bas */
+    align-items: flex-start;            /* colle à gauche */
     flex-wrap: nowrap;
     width: 50vw;
     height: 100%;
-    left: 20px;
-    bottom: 20px;
+    gap: 20px;                          /* petit espace entre avatar et texte */
 }
+
+/* === Texte aligné à gauche === */
 .text {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;            /* alignement à gauche */
     flex-wrap: nowrap;
-    width: 50vw;
+    width: 100%;
     height: auto;
+    gap: 10px;
+    text-align: left;
 }
+
 .text p {
     width: 100%;
-    height: 7vh;
+    margin: 0;
+    text-align: left;
 }
 
 .text1 {
     font-size: 3.5vw;
 }
+
 .text2 {
     font-size: 3.65vw;
 }
 
+/* Partie droite (carrousel) */
 .rightPart {
-    position: fixed; /* keep the right panel fixed to viewport */
+    position: fixed;
     bottom: 0;
     right: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: auto; /* shrink to content instead of taking 50vw */
-    height: auto;
-    padding: 1rem;
-    z-index: 999;
-    pointer-events: none; /* let content inside control pointer events */
     width: 50vw;
     height: 100%;
+    padding: 40px;
+    z-index: 999;
+    pointer-events: none;
 }
 
 #myCarousel {
-  position: fixed;           /* fixed to viewport so it's always at bottom-right */
-  bottom: 0;              /* small gap from the bottom edge */
-  right: 0;               /* small gap from the right edge */
-  width: 60vw; 
-  height: 90vh;
-  overflow: hidden;
-  z-index: 1000;
-  pointer-events: auto;      /* allow interaction with carousel */
-  border-radius: 30px 0 0 0 ;      /* optional: rounded corners */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 60vw; 
+    height: 90vh;
+    overflow: hidden;
+    z-index: 1000;
+    pointer-events: auto;
+    border-radius: 30px 0 0 0;
 }
 
 #myCarousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;         /* preserve image cover behavior */
-  position: absolute;
-  top: 0;
-  left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-/* ensure thisible slide is shown */
 #myCarousel img.active {
-  opacity: 1;
-  z-index: 2;
+    opacity: 1;
+    z-index: 2;
+}
+
+.navProjet {
+    visibility: hidden;
+}
+
+/* ======= MOBILE ======= */
+@media (max-width: 425px) {
+
+    main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        top: 7vh;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .leftPart,
+    .rightPart {
+        position: relative;
+        width: 100%;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        left: auto;
+        bottom: auto;
+        top: auto;
+        right: auto;
+        padding: 0;
+    }
+
+    .leftPart {
+        gap: 8px;
+    }
+
+    /* === Texte centré pleine largeur sur mobile === */
+    .leftPart .text {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        font-size: calc(1vh * var(--font-size-default));
+        gap: 0;
+    }
+
+    .leftPart .text p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text1 {
+        font-size: 10vw;
+    }
+    
+    .text2 {
+        font-size: 10.4vw;
+    }
+
+    /* Avatar plus fluide sur mobile */
+    .hoverImageCss {
+        width: clamp(50px, 40vw, 100px);
+        height: clamp(50px, 40vw, 100px);
+    }
+
+    #myCarousel {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        border-radius: 0;
+    }
+
+    /* === navProjet toujours centré et fluide === */
+    .navProjet {
+        visibility: visible;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--font-color);
+        color: var(--background-color);
+        width: 90vw;
+        min-height: 3vh;
+        border-radius: 40px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .navProjet a {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        font-size: 4vw;
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--background-color);
+    }
 }

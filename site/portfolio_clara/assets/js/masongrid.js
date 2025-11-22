@@ -1,94 +1,141 @@
-// ===== Masonry Grid Vanilla JS (ordre naturel, sans animation) =====
+// ===== Masonry Grid Vanilla JS (ordre naturel, avec filtres boutons, responsive) =====
 
 // Sélection du conteneur
 const grid = document.querySelector(".masongrid");
 
-// Liste d'images
+// Liste d'images + catégories
 const images = [
-  "assets/images/autre_sized/1.png",
-  "assets/images/autre_sized/2.png",
-  "assets/images/autre_sized/3.png",
-  "assets/images/autre_sized/4.png",
-  "assets/images/autre_sized/5.png",
-  "assets/images/autre_sized/6.png",
-  "assets/images/autre_sized/7.png",
-  "assets/images/autre_sized/8.png",
-  "assets/images/autre_sized/9.png",
-  "assets/images/autre_sized/10.png",
-  "assets/images/autre_sized/11.png",
-  "assets/images/autre_sized/12.png",
-  "assets/images/autre_sized/13.png",
-  "assets/images/autre_sized/14.png",
-  "assets/images/autre_sized/15.png",
-  "assets/images/autre_sized/16.png",
-  "assets/images/autre_sized/empty.png",
-  "assets/images/autre_sized/empty.png",
-  "assets/images/autre_sized/19.png",
+  { src: "assets/images/autre_sized/1.png",  categories: ["mockup"] },
+  { src: "assets/images/autre_sized/2.png",  categories: ["photographie"] },
+  { src: "assets/images/autre_sized/3.png",  categories: ["mockup", "photographie"] },
+  { src: "assets/images/autre_sized/4.png",  categories: ["mockup", "photographie"] },
+  { src: "assets/images/autre_sized/5.png",  categories: ["mockup"] },
+  { src: "assets/images/autre_sized/6.png",  categories: ["photographie"] },
+  { src: "assets/images/autre_sized/7.png",  categories: ["fantaisie"] },
+  { src: "assets/images/autre_sized/8.png",  categories: ["fantaisie"] },
+  { src: "assets/images/autre_sized/9.png",  categories: ["mockup"] },
+  { src: "assets/images/autre_sized/10.png", categories: ["mockup", "photographie"] },
+  { src: "assets/images/autre_sized/11.png", categories: ["mockup"] },
+  { src: "assets/images/autre_sized/12.png", categories: ["fantaisie"] },
+  { src: "assets/images/autre_sized/13.png", categories: ["fantaisie"] },
+  { src: "assets/images/autre_sized/14.png", categories: ["mockup"] },
+  { src: "assets/images/autre_sized/15.png", categories: ["mockup"] },
+  { src: "assets/images/autre_sized/16.png", categories: ["fantaisie"] },
+  { src: "assets/images/autre_sized/19.png", categories: ["mockup"] },
 ];
 
 // Paramètres
-const columns = 4;
 const gap = 16;
+
+// Filtre actif
+let activeFilter = "mockup";
+
+// Nombre de colonnes responsive
+function getColumnCount() {
+  const w = window.innerWidth;
+  if (w < 768) return 1;      // mobile
+  return 4;                   // desktop
+}
 
 // Création des éléments
 function createMasonryGrid() {
-  if (!grid) return console.warn("⚠️ .masongrid introuvable dans le DOM");
+  if (!grid) {
+    console.warn("⚠️ .masongrid introuvable dans le DOM");
+    return;
+  }
+
   grid.innerHTML = "";
 
-  images.forEach((src) => {
+  const filteredImages = images.filter((item) => {
+    if (activeFilter === "all") return true;
+    return item.categories.includes(activeFilter);
+  });
+
+  filteredImages.forEach((itemData) => {
     const item = document.createElement("div");
     item.className = "mason-item";
     item.style.position = "absolute";
+    item.dataset.categories = itemData.categories.join(" ");
 
     const img = document.createElement("img");
-    img.src = src;
-    img.alt = "";
+    img.src = itemData.src;
+    img.alt = itemData.categories.join(", ");
     img.style.width = "100%";
     img.style.display = "block";
 
-    img.onload = () => layoutGrid(); // recalcul à chaque chargement
+    img.onload = () => layoutGrid();
     item.appendChild(img);
     grid.appendChild(item);
   });
+
+  // Si les images sont déjà en cache
+  layoutGrid();
 }
 
-// Placement des images (ordre strict)
+// Placement (ordre strict)
 function layoutGrid() {
+  if (!grid) return;
+
   const containerWidth = grid.offsetWidth;
-  const columnWidth = (containerWidth - gap * (columns - 1)) / columns;
-  const columnHeights = new Array(columns).fill(0);
+  const cols = getColumnCount();
+  const columnWidth = (containerWidth - gap * (cols - 1)) / cols;
+  const columnHeights = new Array(cols).fill(0);
 
   const items = grid.querySelectorAll(".mason-item");
 
   items.forEach((item, index) => {
     const img = item.querySelector("img");
-    if (!img.naturalWidth) return;
+    if (!img || !img.naturalWidth) return;
 
     const aspectRatio = img.naturalHeight / img.naturalWidth;
     const height = columnWidth * aspectRatio;
 
-    // ordre strict : on remplit colonne 1 → 2 → 3 → 4 puis retour à 1
-    const columnIndex = index % columns;
+    const columnIndex = index % cols;
     const left = columnIndex * (columnWidth + gap);
     const top = columnHeights[columnIndex];
 
     item.style.width = `${columnWidth}px`;
     item.style.transform = `translate(${left}px, ${top}px)`;
-
-    // pas d'animation, pas de transition
     item.style.transition = "none";
 
     columnHeights[columnIndex] += height + gap;
   });
 
-  // Ajuste la hauteur du conteneur
-  grid.style.height = `${Math.max(...columnHeights)}px`;
+  if (columnHeights.length > 0) {
+    grid.style.height = `${Math.max.apply(null, columnHeights)}px`;
+  }
 }
+
+// Changer le filtre
+function setMasonryFilter(filterName) {
+  activeFilter = filterName; // "all", "mockup", "photographie", "fantaisie"
+  createMasonryGrid();
+}
+
+// Init
+window.addEventListener("DOMContentLoaded", () => {
+  createMasonryGrid();
+
+  const filterButtons = document.querySelectorAll(".btnFilter");
+  filterButtons.forEach((btn) => {
+    // état initial : si le texte matche activeFilter, on active le bouton
+    const label = btn.textContent.trim().toLowerCase();
+    if (label === activeFilter) {
+      btn.classList.add("active");
+    }
+
+    btn.addEventListener("click", () => {
+      const filter = btn.textContent.trim().toLowerCase(); // "mockup", "photographie", "fantaisie"
+
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      setMasonryFilter(filter);
+    });
+  });
+});
 
 // Recalcul sur resize
 window.addEventListener("resize", () => {
   layoutGrid();
 });
-
-// Initialisation
-window.addEventListener("DOMContentLoaded", createMasonryGrid);

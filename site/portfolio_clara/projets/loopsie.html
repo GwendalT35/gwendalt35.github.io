@@ -6,14 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
     <link rel="stylesheet" href="../assets/css/projet/projects.css">
     <script src="../assets/js/horizontalscroll.js" defer></script>
+    <script src="../assets/js/responsive.js" defer></script>
 
     <title>Portfolio</title>
 </head>
 
 <body id="horizontalscroll" >
-
+    <header>
+        <div class="menu">
+            <div class="name"><a href="../index.html">Clara Amoretti</a></div>
+            <button id="burgerIcon" aria-label="Ouvrir le menu"><span></span></button>
+            <nav id="site-nav">
+                <ul>
+                    <li><a href="../projets.html">projets</a></li>
+                    <li><a href="../others.html">autres</a></li>
+                    <li><a href="../about.html">à propos</a></li>
+                    <li><a href="../contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div role="separator" aria-hidden="true" class="separator"></div>
+    </header>
     <main>
         <a href="../projets.html" class="return-button">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -21,7 +37,11 @@
             </svg>
             <p>Projets</p>
         </a>
-
+        <div class="linkContainer">
+            <p class="textLink">Loopsie</p>
+            <p class="bullet">•</p>
+            <p class="date">2025</p>
+        </div>
         <div class="imageContainer">
             <img src="../assets/images/page_loopsie/frame_120_446055.jpg" alt="">
             <img src="../assets/images/page_loopsie/frame_121_41a948.jpg" alt="">
@@ -44,12 +64,12 @@
         </div>
     </main>
     <footer>
-        <div role="separator" aria-hidden="true" class="separator"></div>
         <div class="container">
             <div class="title">
                 <p class="projectName">Loopsie</p>
                 <p class="date">2025</p>
             </div>
+            <div class="arrow"></div>
             <p class="description">Loopsie est un projet fictif de création d'application, réalisé avec Louise Bernard. L'objectif de l'application est de redonner envie à l'utilisateur de marcher et de déconnecter avec le numérique grâce à une
 
 interface épurée et minimaliste et des fonctionnalités qui poussent à la sensibilité et au bien-être en pleine conscience.

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
       <link rel="stylesheet" href="./assets/css/menu.css">
     <link rel="stylesheet" href="./assets/css/others.css">
+    <script src="./assets/js/responsive.js" defer></script>
     <script src="./assets/js/masongrid.js" defer></script>
     <title>Portfolio</title>
 </head>
@@ -16,7 +17,8 @@
     <header>
         <div class="menu">
             <div class="name"><a href="index.html">Clara Amoretti</a></div>
-            <nav>
+            <button id="burgerIcon" aria-label="Ouvrir le menu"><span></span></button>
+            <nav id="site-nav">
                 <ul>
                     <li><a href="./projets.html">projets</a></li>
                     <li class="activePage"><a href="./others.html">autres</a></li>
@@ -29,6 +31,11 @@
     </header>
     <main>
         <p class="text">La catégorie "autres" contient les expérimentations qui ne rentrent pas dans la catégorie "projets", notamment les expérimentations avec l'intelligence artificielle.</p>
+        <div class="filter">
+            <button class="btnFilter active">mockup</button>
+            <button class="btnFilter">photographie</button>
+            <button class="btnFilter">fantaisie</button>
+        </div>
         <div class="masongrid"></div>
     </main>
 </body>

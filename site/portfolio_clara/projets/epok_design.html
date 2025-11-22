@@ -6,15 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
     <link rel="stylesheet" href="../assets/css/projet/projects.css">
     <link rel="stylesheet" href="../assets/css/projet/epok_design.css">
     <script src="../assets/js/horizontalscroll.js" defer></script>
+    <script src="../assets/js/responsive.js" defer></script>
 
     <title>Portfolio</title>
 </head>
 
 <body id="horizontalscroll" >
-
+    <header>
+        <div class="menu">
+            <div class="name"><a href="../index.html">Clara Amoretti</a></div>
+            <button id="burgerIcon" aria-label="Ouvrir le menu"><span></span></button>
+            <nav id="site-nav">
+                <ul>
+                    <li><a href="../projets.html">projets</a></li>
+                    <li><a href="../others.html">autres</a></li>
+                    <li><a href="../about.html">à propos</a></li>
+                    <li><a href="../contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div role="separator" aria-hidden="true" class="separator"></div>
+    </header>
     <main>
         <a href="../projets.html" class="return-button">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -23,6 +39,11 @@
             <p>Projets</p>
         </a>
 
+        <div class="linkContainer">
+            <p class="textLink">Rapport de stage</p>
+            <p class="bullet">•</p>
+            <p class="date">fév 2024</p>
+        </div>
         <div class="imageContainer">
             <img src="../assets/images/page_rapport de stage/frame_118_cce0c0.jpg" alt="">
             <img src="../assets/images/page_rapport de stage/frame_120_9adf9b.jpg" alt="">
@@ -46,12 +67,12 @@
         </div>
     </main>
     <footer>
-        <div role="separator" aria-hidden="true" class="separator"></div>
         <div class="container">
             <div class="title">
                 <p class="projectName">Rapport de stage : Epok Design</p>
                 <p class="date">février 2024</p>
             </div>
+            <div class="arrow"></div>
             <p class="description">J'ai pu réaliser un stage de 3 mois avec le studio rennais et parisien Epok Design au cours de ma 3e année d'études de Design Graphique.
 
 Au cours de ces trois mois, j'ai participé à divers projets : mise en page, création d'affiche, infographique…

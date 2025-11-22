@@ -1,13 +1,22 @@
 /* === MAIN LAYOUT === */
+header {
+  display: none;
+}
+
 main {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;          /* toujours horizontal */
   height: 100vh;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
   user-select: none;
-  z-index: -100;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* on évite les z-index négatifs qui cassent les interactions tactiles */
+.linkContainer {
+  display: none;
 }
 
 /* === CURSORS === */
@@ -31,24 +40,28 @@ main {
   align-items: center;
   left: 20px;
   top: 20px;
-  gap: 20px;
+  gap: 10px;
   text-decoration: none;
   background: transparent;
   cursor: pointer;
   width: auto;
+  z-index: 110;
 }
 
 .return-button svg {
   width: auto;
-  height: 3vh;
+  height: 2.5vh;
 }
 
 .return-button p {
+  position: relative;
   font-family: 'MaisonNeueBook', sans-serif;
-  font-size: 1.5vw;
+  font-size: var(--font-size-default);
   color: var(--font-color);
-  margin: 0;
-  height: 3vh;
+  margin: auto;
+  align-items: center;
+  justify-self: center;
+  top: 4px;
 }
 
 /* === IMAGES === */
@@ -59,7 +72,6 @@ main {
   height: 100vh;
   width: auto;
   position: relative;
-  z-index: -1;
 }
 
 .imageContainer img {
@@ -134,7 +146,7 @@ main {
   justify-content: flex-end;
 }
 
-/* === FOOTER === */
+/* === FOOTER BASE (commun desktop + mobile) === */
 footer {
   position: fixed;
   bottom: 0;
@@ -142,35 +154,14 @@ footer {
   width: 100%;
   background-color: var(--background-color);
   z-index: 100;
-
-  /* visible : seulement le titre + ligne */
   transform: translateY(calc(100% - 7vh));
   height: 7vh;
   transition: transform 0.5s ease, height 0.5s ease;
   border-top: 1px solid var(--font-color);
-  cursor: text;
+  cursor: pointer;
   overflow: hidden;
 }
 
-/* au hover : remonte et agrandit */
-footer:hover {
-  transform: translateY(0);
-  height: 15vh; /* ← tu peux ajuster selon la taille de ta description */
-}
-
-/* quand le footer s’ouvre, masque les boutons dessous */
-footer:hover ~ .navContainer {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-/* ligne de séparation déjà intégrée dans la bordure */
-.separator {
-  display: none;
-}
-
-/* conteneur interne */
 .container {
   display: flex;
   flex-direction: column;
@@ -178,7 +169,6 @@ footer:hover ~ .navContainer {
   color: var(--font-color);
 }
 
-/* bloc titre */
 .title {
   display: flex;
   justify-content: space-between;
@@ -190,7 +180,6 @@ footer:hover ~ .navContainer {
   transition: color 0.3s ease;
 }
 
-/* description masquée visuellement */
 .description {
   max-width: 80vw;
   margin: 0 2vw 1vh;
@@ -204,15 +193,177 @@ footer:hover ~ .navContainer {
   pointer-events: none;
 }
 
-/* survol du footer : la description apparaît */
-footer:hover .description {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
 
-/* effet de couleur */
-footer:hover .title {
-  color: var(--accent-color, var(--font-color));
-}
+  footer:hover {
+    transform: translateY(0);
+    height: 15vh;
+  }
 
+  footer:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  footer:hover .title {
+    color: var(--accent-color, var(--font-color));
+  }
+
+  footer:hover ~ .navContainer {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+
+/* ====================== */
+/*          MOBILE        */
+/* ====================== */
+@media (max-width: 425px) {
+
+  /* BLOQUE LE SCROLL VERTICAL DE TOUTE LA PAGE */
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  header {
+    display: block;
+  }
+
+  .nav-btn,
+  .previous-btn,
+  .next-btn,
+  .return-button {
+    display: none;
+  }
+
+  main {
+    height: 90%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    top: 14vh;
+  }
+
+  .imageContainer{
+    align-items: flex-start;
+  }
+
+  .imageContainer img {
+    height: 75vh;
+  }
+
+  /* BLOC EN HAUT FIXÉ SUR MOBILE */
+  .linkContainer {
+    position: fixed;
+    top: 7vh;
+    width: 100%;
+    padding: 0 4vw 0 4vw;
+    background: var(--background-color);
+    z-index: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .textLink {
+    font-family: 'CooperBTLight', sans-serif;
+    font-size: calc(0.9 * var(--font-size-default));
+  }
+
+  .bullet {
+    color: #F8A08D;
+  }
+
+  .date {
+    font-family: 'MaisonNeueLight', sans-serif;
+    font-size: calc(0.58 * var(--font-size-default));
+    color: var(--font-color);
+  }
+
+  /* Footer mobile : même état fermé que sur desktop (7vh compressé) */
+  footer {
+    border-radius: 20px 20px 0 0;
+    background: var(--background-color);
+    border-top: none;
+    transform: translateY(calc(100% - 7vh));
+    height: 7vh;
+  }
+
+  footer .title {
+    display: none;
+  }
+
+  footer .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  .arrow {
+    position: relative;
+    width: 48px;
+    height: 16px;
+    margin: 0 auto;
+  }
+
+  .arrow::before,
+  .arrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 51%;
+    height: 2px;
+    background: #F34A1F;
+  }
+
+  .arrow::before {
+    left: 0;
+    transform-origin: right center;
+    transform: translateY(-50%) rotate(-20deg);
+  }
+
+  .arrow::after {
+    right: 0;
+    transform-origin: left center;
+    transform: translateY(-50%) rotate(20deg);
+  }
+
+  /* État fermé mobile : description toujours cachée */
+  footer .description {
+    max-width: 100%;
+    font-size: calc(0.5 * var(--font-size-default));
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    margin: 3vw 3vh;
+  }
+
+  /* État ouvert mobile via .is-open (JS) */
+  footer.is-open {
+    height: auto;
+    padding-bottom: 2vh;
+    transform: translateY(0);
+  }
+
+  footer.is-open .description {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  footer.is-open .arrow::before {
+    width: 0;
+  }
+
+  footer.is-open .arrow::after {
+    left: 50%;
+    right: auto;
+    width: 40px;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}

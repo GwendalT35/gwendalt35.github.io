@@ -1,13 +1,11 @@
 @font-face {
     font-family: 'RuddyBold';
     src: url("../../00_FONTS/13e_atelier/Ruddy_Bold.otf") format("opentype");
-
 }
 
 @font-face {
     font-family: 'SagaceRegular';
     src: url("../../00_FONTS/13e_atelier/Sagace-Regular.otf") format("opentype");
-    
 }
 
 .imgContainer img:first-child {
@@ -35,7 +33,8 @@
 }
 
 .img-topDiv {
-    display: fixed;
+    /* display: fixed; <-- pas valide */
+    display: block;
     width: 35vw;
     background-image: url('../../images/page_13e_atelier/Colas.png');
     background-size: contain;
@@ -55,9 +54,7 @@
     justify-content: space-evenly;
     gap: 10px;
     text-align: justify;
-    
 }
-
 
 .downDiv {
     display: flex;
@@ -70,14 +67,13 @@
     object-fit: contain;
     width: auto;
     height: 15vh;
-
 }
 
 .thirdSlide {
     display: flex;
     flex-direction: column;
     justify-content: center;
-} 
+}
 
 .thirdSlide img {
     object-fit: contain;
@@ -99,21 +95,21 @@
     position: relative;
     width: 100%;
 }
-.left-part .show{
+
+.left-part .show {
     font-family: 'RuddyBold';
     font-size: calc(3 * var(--font-size-default));
 }
 
-.left-part .show:nth-child(1){
+.left-part .show:nth-child(1) {
     font-size: calc(1.5 * var(--font-size-default));
 }
 
-.left-part .show:nth-child(2){
+.left-part .show:nth-child(2) {
     font-size: calc(3 * var(--font-size-default));
 }
 
-
-.left-part .show:nth-child(3){
+.left-part .show:nth-child(3) {
     font-size: calc(3 * var(--font-size-default));
 }
 
@@ -127,7 +123,6 @@
     width: 50vw;
 }
 
-
 .right-part {
     position: relative;
     display: flex;
@@ -140,16 +135,15 @@
     font-family: 'SagaceRegular';
 }
 
-.right-part .show2:nth-child(1){
+.right-part .show2:nth-child(1) {
     font-size: calc(1.5 * var(--font-size-default));
 }
 
-.right-part .show2:nth-child(2){
+.right-part .show2:nth-child(2) {
     font-size: calc(3 * var(--font-size-default));
 }
 
-
-.right-part .show2:nth-child(3){
+.right-part .show2:nth-child(3) {
     font-size: calc(3 * var(--font-size-default));
 }
 
@@ -202,3 +196,100 @@
 }
 
 
+/* ======================================================= */
+/* ====================== MOBILE ========================= */
+/* ======================================================= */
+
+@media (max-width: 425px) {
+
+  .imgContainer img:first-child {
+    width: 100vw; /* image d’intro plus large sur tel */
+  }
+
+  .secondeSlide {
+    width: 100vw;
+    gap: 0;
+    align-items: center;
+  }
+
+  .topDiv {
+    left: 0;
+    right: 0;
+    max-width: 90vw;         /* évite d’être trop serré */
+    height: auto;
+    align-items: center;
+    gap: 4vw;
+  }
+
+  .img-topDiv {
+    width: 100vw;             /* image un peu plus large sur tel */
+    min-height: 50vh;
+    background-size: contain;
+  }
+
+  .text-topDiv {
+    font-size: clamp(0.9rem, 2.6vw, 1rem);
+  }
+
+  .downDiv {
+    gap: 4vw;
+    width: 15vw;
+  }
+
+  .downDiv img {
+    height: 12vh;
+  }
+
+  /* === THIRD SLIDE : agrandie + centrée sur mobile === */
+  .thirdSlide {
+    width: 100vw;
+    min-height: 80vh;           /* plus grande visuellement */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* centre horizontalement le contenu */
+    justify-content: center;    /* centre verticalement dans la slide */
+  }
+  
+  .thirdSlide img {
+    width: 90vw;                /* grande mais avec un petit breathing room */
+    max-width: 90vw;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .fourthSlide {
+    width: 100vw;
+    margin: 0;
+    gap: 7vh;
+  }
+
+  .left-part img {
+    width: 100vw;
+    left: 15vw;
+  }
+
+  .right-part {
+    width: 100%;
+    gap: 0;
+  }
+
+  .colorContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 4vh;
+    margin-bottom: 6vh;
+    gap: 1vh;
+  }
+
+  .colorContainer div:nth-child(1) {
+    width: clamp(80px, 25vw, 120px);
+    border-radius: 25vw;
+  }
+
+  .colorContainer div:nth-child(2),
+  .colorContainer div:nth-child(3),
+  .colorContainer div:nth-child(4) {
+    width: clamp(50px, 20vw, 100px);
+  }
+}

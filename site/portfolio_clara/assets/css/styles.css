@@ -13,7 +13,7 @@
 /* maison = straight */
 @font-face {
     font-family: 'MaisonNeueLight';
-    src: url("../00_FONTS/MAISON-NEUE/fonnts.com-Maison_Neue_Light.ttf"), format("truetype");
+    src: url("../00_FONTS/MAISON-NEUE/fonnts.com-Maison_Neue_Light.ttf") format("truetype");
 }
 
 @font-face {

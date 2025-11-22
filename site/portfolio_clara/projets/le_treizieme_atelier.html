@@ -6,15 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
     <link rel="stylesheet" href="../assets/css/projet/projects.css">
     <link rel="stylesheet" href="../assets/css/projet/13e_atelier.css">
     <script src="../assets/js/horizontalscroll.js" defer></script>
+    <script src="../assets/js/responsive.js" defer></script>
 
     <title>Portfolio</title>
 </head>
 
 <body id="horizontalscroll" >
-
+    <header>
+        <div class="menu">
+            <div class="name"><a href="../index.html">Clara Amoretti</a></div>
+            <button id="burgerIcon" aria-label="Ouvrir le menu"><span></span></button>
+            <nav id="site-nav">
+                <ul>
+                    <li><a href="../projets.html">projets</a></li>
+                    <li><a href="../others.html">autres</a></li>
+                    <li><a href="../about.html">à propos</a></li>
+                    <li><a href="../contact.html">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div role="separator" aria-hidden="true" class="separator"></div>
+    </header>
     <main>
         <a href="../projets.html" class="return-button">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -22,7 +38,11 @@
             </svg>
             <p>Projets</p>
         </a>
-
+        <div class="linkContainer">
+            <p class="textLink">Le Treizième Atelier</p>
+            <p class="bullet">•</p>
+            <p class="date">déc 2024</p>
+        </div>
         <div class="imageContainer">
             <img src="../assets/images/page_13e_atelier/05_13e-Atelier.png" alt="">
             <div class="secondeSlide">
@@ -85,12 +105,12 @@
         </div>
     </main>
     <footer>
-        <div role="separator" aria-hidden="true" class="separator"></div>
         <div class="container">
             <div class="title">
                 <p class="projectName">Treizième Atelier</p>
                 <p class="date">décembre 2024</p>
             </div>
+            <div class="arrow"></div>
             <p class="description">Le Treizième Atelier, c'est le projet de Colas Mérand, un professionnel de la stratégie de communication, passionné de la "comm' de crise".
 
 En 2024, il crée sa société et me demande de réaliser une identité visuelle qui lui ressemble.

@@ -8,24 +8,26 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/menu.css">
     <link rel="stylesheet" href="./assets/css/index.css">
+    <script src="./assets/js/responsive.js" defer></script>
     <script src="./assets/js/script.js" defer></script>
     <title>Portfolio</title>
 </head>
 
 <body>
     <header>
-        <div class="menu">
-            <div class="name"><a href="index.html">Clara Amoretti</a></div>
-            <nav>
-                <ul>
-                    <li><a href="./projets.html">projets</a></li>
-                    <li><a href="./others.html">autres</a></li>
-                    <li><a href="./about.html">à propos</a></li>
-                    <li><a href="./contact.html">contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div role="separator" aria-hidden="true" class="separator"></div>
+    <div class="menu">
+        <div class="name"><a href="/">Clara Amoretti</a></div>
+        <button id="burgerIcon" aria-label="Ouvrir le menu"><span></span></button>
+        <nav id="site-nav">
+            <ul>
+                <li><a href="./projets.html">projets</a></li>
+                <li><a href="./others.html">autres</a></li>
+                <li><a href="./about.html">à propos</a></li>
+                <li><a href="./contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="separator" aria-hidden="true"></div>
     </header>
     <main>
         <div class="leftPart">
@@ -49,6 +51,9 @@
                 </a>
                 
             </div>
+        </div>
+        <div class="navProjet">
+            <a href="./projets.html">Voir les projets</a>
         </div>
     </main>
 </body>

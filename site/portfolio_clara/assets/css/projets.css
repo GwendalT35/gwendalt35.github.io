@@ -1,8 +1,10 @@
 main {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5vh;
+    top: 7vh;
 }
 
 .links{
@@ -18,10 +20,8 @@ main {
      width: 32px;
 }
 
-.linkContainer:hover {
-    .icon {
-            rotate: -45deg;
-    }
+.linkContainer:hover .icon {
+    rotate: -45deg;
 }
 
 .linkContainer{
@@ -59,3 +59,63 @@ main {
   border-radius: 30px;
   object-fit: cover;
 }
+
+
+@media (max-width: 425px) {
+    main {
+        width: 100vw;                   /* force la largeur */
+        /* box-sizing: border-box; */
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .links {
+        position: static;               /* indispensable pour permettre le 100% */
+        width: 100%;                    /* prend toute la largeur du main */
+        box-sizing: border-box;
+    }
+
+    .linkContainer {
+        display: flex;
+        align-items: center;
+        width: 100%;                    /* enfin un vrai 100% */
+        justify-content: space-between;
+        box-sizing: border-box;         /* limite les débordements */
+    }
+
+    .icon {
+        width: 6vw;
+        flex-shrink: 0;
+    }
+
+    .textLink {
+        flex: 1;
+        text-align: left;
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+    }
+
+    .bullet {
+        color: #F8A08D;
+        margin: 0 4vw;
+    }
+
+    .date {
+        flex-shrink: 0;
+        color: var(--font-color);
+    }
+
+    .linkContainer .icon {
+        rotate: -45deg;
+    }
+
+    .linkContainer:hover .icon {
+        rotate: 0deg;
+    }
+
+    .projectImage {
+        display: none;
+    }
+}
+

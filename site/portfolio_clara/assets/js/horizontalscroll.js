@@ -44,9 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Navigation gauche/droite
   document.addEventListener("click", (e) => {
-    if (e.target.closest("video")) return; // bloque le changement de page
-    console.log(e.target.closest("video"));
-    
+    if (!e.target.closest(".imageContainer")) return;
     const middle = window.innerWidth / 2;
 
     if (e.clientX < middle)
@@ -57,13 +55,13 @@ document.addEventListener("DOMContentLoaded", () => {
     {
           main.scrollLeft += window.innerWidth * 0.3;
     }
-    // const previousBtn = document.querySelector(".previous-btn");
-    // const nextBtn = document.querySelector(".next-btn");
+  });
 
-    // if (e.clientX < middle && previousBtn) {
-    //   window.location.href = previousBtn.href;
-    // } else if (e.clientX >= middle && nextBtn) {
-    //   window.location.href = nextBtn.href;
-    // }
+
+  const footer = document.querySelector("footer");
+  if (!footer) return;
+
+  footer.addEventListener("click", () => {
+    footer.classList.toggle("is-open");
   });
 });

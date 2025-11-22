@@ -5,3 +5,13 @@
 .imageContainer img:last-child {
     width: 50vw;
 }
+
+@media (max-width: 425px) {
+    .imageContainer img:first-child {
+        width: 100%;
+    }
+
+    .imageContainer img:last-child {
+        width: 100%;
+    }
+}

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectData = {
     "Volcom x Gazpacho": {
       img: "./assets/images/02_page_projets visuels/01_volcom.png",
-      url: "./projets/volcom_x_gazpacho.html",
+      url: "/projets/volcom_x_gazpacho.html",
     },
     "Bureau des temps": {
       img: "./assets/images/02_page_projets visuels/02_bureau-des-temps.png",
