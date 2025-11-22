@@ -31,9 +31,9 @@ main {
 .content {
   font-family: 'MaisonNeueLight', sans-serif;
   display: flex;
-  flex-direction: row; /* sur une seule ligne */
-  flex-wrap: wrap; /* permet de passer à la ligne si trop long */
-  gap: 0.3em; /* espace naturel entre les mots/éléments */
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  gap: 0.3em; 
   max-width: 50vw;
   font-size: 1.2rem;
   line-height: 1.4;
@@ -52,7 +52,7 @@ main {
     visibility: hidden;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
 
     main {
         position: relative;

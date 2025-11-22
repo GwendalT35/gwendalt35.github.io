@@ -1,4 +1,3 @@
-/* Coopper = stylish */
 @font-face {
     font-family: 'CooperBTLight';
     src: url("../00_FONTS/Cooper-Light-BT/cooper_bt_light.ttf") format("truetype");
@@ -10,7 +9,6 @@
 }
 
 
-/* maison = straight */
 @font-face {
     font-family: 'MaisonNeueLight';
     src: url("../00_FONTS/MAISON-NEUE/fonnts.com-Maison_Neue_Light.ttf") format("truetype");
@@ -30,7 +28,6 @@
     --background-color:#f5f5f5;
     --font-color:#6D1F28;
     --font-size-default: 24px;
-
 }
 
 body {

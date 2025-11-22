@@ -200,7 +200,7 @@
 /* ====================== MOBILE ========================= */
 /* ======================================================= */
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
 
   .imgContainer img:first-child {
     width: 100vw; /* image d’intro plus large sur tel */

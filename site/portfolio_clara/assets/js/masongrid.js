@@ -1,9 +1,5 @@
-// ===== Masonry Grid Vanilla JS (ordre naturel, avec filtres boutons, responsive) =====
-
-// Sélection du conteneur
 const grid = document.querySelector(".masongrid");
 
-// Liste d'images + catégories
 const images = [
   { src: "assets/images/autre_sized/1.png",  categories: ["mockup"] },
   { src: "assets/images/autre_sized/2.png",  categories: ["photographie"] },
@@ -24,20 +20,16 @@ const images = [
   { src: "assets/images/autre_sized/19.png", categories: ["mockup"] },
 ];
 
-// Paramètres
 const gap = 16;
 
-// Filtre actif
 let activeFilter = "mockup";
 
-// Nombre de colonnes responsive
 function getColumnCount() {
   const w = window.innerWidth;
-  if (w < 768) return 1;      // mobile
-  return 4;                   // desktop
+  if (w < 768) return 1;     
+  return 4;                  
 }
 
-// Création des éléments
 function createMasonryGrid() {
   if (!grid) {
     console.warn("⚠️ .masongrid introuvable dans le DOM");
@@ -68,11 +60,10 @@ function createMasonryGrid() {
     grid.appendChild(item);
   });
 
-  // Si les images sont déjà en cache
+
   layoutGrid();
 }
 
-// Placement (ordre strict)
 function layoutGrid() {
   if (!grid) return;
 
@@ -106,26 +97,24 @@ function layoutGrid() {
   }
 }
 
-// Changer le filtre
 function setMasonryFilter(filterName) {
-  activeFilter = filterName; // "all", "mockup", "photographie", "fantaisie"
+  activeFilter = filterName;
   createMasonryGrid();
 }
 
-// Init
 window.addEventListener("DOMContentLoaded", () => {
   createMasonryGrid();
 
   const filterButtons = document.querySelectorAll(".btnFilter");
   filterButtons.forEach((btn) => {
-    // état initial : si le texte matche activeFilter, on active le bouton
+  
     const label = btn.textContent.trim().toLowerCase();
     if (label === activeFilter) {
       btn.classList.add("active");
     }
 
     btn.addEventListener("click", () => {
-      const filter = btn.textContent.trim().toLowerCase(); // "mockup", "photographie", "fantaisie"
+      const filter = btn.textContent.trim().toLowerCase();
 
       filterButtons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
@@ -135,7 +124,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Recalcul sur resize
 window.addEventListener("resize", () => {
   layoutGrid();
 });

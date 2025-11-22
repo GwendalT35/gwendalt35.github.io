@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".linkContainer");
   const projectImage = document.querySelector(".projectImage");
 
-  // Dictionnaire projet → { image, lien }
   const projectData = {
     "Volcom x Gazpacho": {
       img: "./assets/images/02_page_projets visuels/01_volcom.png",
@@ -57,14 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = projectData[name];
     if (!data) return;
 
-    // Survol : affiche l’image
+
     link.addEventListener("mouseenter", () => {
       hovering = true;
       projectImage.src = data.img;
       projectImage.style.opacity = "1";
     });
 
-    // Sortie : cache si on ne va pas sur un autre lien
+
     link.addEventListener("mouseleave", e => {
       hovering = false;
       const related = e.relatedTarget;
@@ -77,12 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
     });
 
-    // Clic : redirection
+
     link.addEventListener("click", () => {
       window.location.href = data.url;
     });
 
-    // Curseur interactif
+
     link.style.cursor = "pointer";
   });
 });

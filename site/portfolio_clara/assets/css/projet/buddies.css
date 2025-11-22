@@ -71,7 +71,7 @@
 }
 
 /* ===================== MOBILE ===================== */
-@media (max-width: 425px) {
+@media (max-width: 768px) {
 
   /* images générales inchangées */
   .imageContainer > img {

@@ -1,17 +1,17 @@
-/* === IMAGES === */
+
 .imageContainer {
   z-index: 0;
-  position: relative; /* important pour le <p> en absolute */
+  position: relative; 
 }
 
-/* Première image large */
+
 .imageContainer img:first-child {
   width: 75vw;
   object-fit: cover;
   display: block;
 }
 
-/* Septième image : plus grande, centrée */
+
 .imageContainer img:nth-child(7) {
   height: 90vh;
   width: auto;
@@ -20,7 +20,7 @@
   margin: 0 auto;
 }
 
-/* === VIDÉOS === */
+
 .videoContainer {
   display: flex;
   flex-direction: row;
@@ -33,7 +33,7 @@
   pointer-events: auto;
 }
 
-/* Vidéos responsives */
+
 .videoContainer video {
   width: 100%;
   height: 100%;
@@ -44,7 +44,7 @@
   z-index: 11;
 }
 
-/* === TEXTE SUR LES IMAGES === */
+
 .imageContainer p {
   position: absolute;
   bottom: 10vh;
@@ -55,18 +55,18 @@
   color: black;
 }
 
-/* ================================================================= */
-/* =========================== MOBILE =============================== */
-/* ================================================================= */
 
-@media (max-width: 425px) {
-  /* 1ère IMAGE : reste grande, mais on la simplifie un peu */
+
+
+
+@media (max-width: 768px) {
+  
   .imageContainer img:first-child {
     width: 65%;
     object-fit: cover;
   }
 
-  /* 7e IMAGE : un peu plus petite que le viewport mais bien visible */
+  
   .imageContainer img:nth-child(7) {
     width: auto;
     height: 65vh;
@@ -76,7 +76,7 @@
     display: block;
   }
 
-  /* VIDÉO : reste bien dans l'écran */
+  
   .videoContainer {
     height: 100vh;
     position: relative;
@@ -89,12 +89,12 @@
     object-fit: cover;
   }
 
-  /* TEXTE : même positionnement que sur PC (si tu veux le même rendu) */
+  
   .imageContainer p {
     bottom: 35vh;
     right: -55vw;
-    max-width: 75vw;   /* même que desktop */
+    max-width: 75vw;   
     text-align: justify;
-    font-size: calc(0.8 * var(--font-size-default)); /* un peu plus petit */
+    font-size: calc(0.8 * var(--font-size-default)); 
   }
 }

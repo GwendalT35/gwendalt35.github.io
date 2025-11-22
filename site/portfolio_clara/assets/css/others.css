@@ -51,7 +51,7 @@ main{
 }
 
 
-@media (max-width: 425px)  {
+@media (max-width: 768px) {
   .text {
     font-size: clamp(0.9rem, 3.5vw, 1rem);
   }

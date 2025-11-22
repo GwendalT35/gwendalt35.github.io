@@ -1,6 +1,5 @@
 .hoverImageCss {
     background-image: url("../images/AVATAR_Default.png");
-    /* Taille responsive */
     width: clamp(120px, 20vw, 200px);
     height: clamp(120px, 20vw, 200px);
     background-size: cover;
@@ -11,14 +10,13 @@
     background-image: url("../images/AVATAR_Hover.png");
 }
 
-/* ======= DESKTOP ======= */
 main {
     position: absolute;
     bottom: 0;
     left: 0;
     display: flex;
-    align-items: flex-end;              /* place le contenu en bas */
-    justify-content: space-between;     /* équilibre gauche/droite */
+    align-items: flex-end;              
+    justify-content: space-between;     
     width: 100vw;
     padding: 40px;
     gap: 40px;
@@ -29,20 +27,20 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;          /* colle tout en bas */
-    align-items: flex-start;            /* colle à gauche */
+    justify-content: flex-end;          
+    align-items: flex-start;            
     flex-wrap: nowrap;
     width: 50vw;
     height: 100%;
-    gap: 20px;                          /* petit espace entre avatar et texte */
+    gap: 20px;                          
 }
 
-/* === Texte aligné à gauche === */
+
 .text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;            /* alignement à gauche */
+    align-items: flex-start;            
     flex-wrap: nowrap;
     width: 100%;
     height: auto;
@@ -64,7 +62,7 @@ main {
     font-size: 3.65vw;
 }
 
-/* Partie droite (carrousel) */
+
 .rightPart {
     position: fixed;
     bottom: 0;
@@ -109,8 +107,8 @@ main {
     visibility: hidden;
 }
 
-/* ======= MOBILE ======= */
-@media (max-width: 425px) {
+
+@media (max-width: 768px) {
 
     main {
         position: relative;
@@ -141,7 +139,7 @@ main {
         gap: 8px;
     }
 
-    /* === Texte centré pleine largeur sur mobile === */
+    
     .leftPart .text {
         align-items: center;
         justify-content: center;
@@ -164,7 +162,7 @@ main {
         font-size: 10.4vw;
     }
 
-    /* Avatar plus fluide sur mobile */
+    
     .hoverImageCss {
         width: clamp(50px, 40vw, 100px);
         height: clamp(50px, 40vw, 100px);
@@ -177,7 +175,7 @@ main {
         border-radius: 0;
     }
 
-    /* === navProjet toujours centré et fluide === */
+    
     .navProjet {
         visibility: visible;
         display: flex;
