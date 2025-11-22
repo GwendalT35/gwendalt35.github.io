@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!footer) return;
 
   footer.addEventListener("click", () => {
-    footer.classList.toggle("is-open");
+    if (window.innerWidth <= 768) {
+      footer.classList.toggle("is-open");
+    }
   });
 });
