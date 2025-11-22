@@ -1,4 +1,3 @@
-
 header {
   display: none;
 }
@@ -14,11 +13,9 @@ main {
   -webkit-overflow-scrolling: touch;
 }
 
-
 .linkContainer {
   display: none;
 }
-
 
 .mainCursorLeft {
   cursor: url('../../cursor/fleche-gauche.png') 16 16, auto;
@@ -28,11 +25,9 @@ main {
   cursor: url('../../cursor/fleche-droite.png') 16 16, auto;
 }
 
-
 .hidden {
   visibility: hidden;
 }
-
 
 .return-button {
   position: fixed;
@@ -64,7 +59,6 @@ main {
   top: 4px;
 }
 
-
 .imageContainer {
   display: flex;
   align-items: center;
@@ -78,7 +72,6 @@ main {
   height: 100vh;
   object-fit: cover;
 }
-
 
 .navContainer {
   position: fixed;
@@ -124,11 +117,9 @@ main {
   transition: opacity 0.3s ease;
 }
 
-
 .nav-btn:hover p {
   opacity: 1;
 }
-
 
 .previous-btn:hover {
   width: 11vw;
@@ -145,7 +136,6 @@ main {
 .next-btn {
   justify-content: flex-end;
 }
-
 
 footer {
   position: fixed;
@@ -193,6 +183,10 @@ footer {
   pointer-events: none;
 }
 
+/* ===================== */
+/*  HOVER = DESKTOP ONLY */
+/* ===================== */
+@media (min-width: 769px) {
 
   footer:hover {
     transform: translateY(0);
@@ -214,14 +208,14 @@ footer {
     pointer-events: none;
     transition: opacity 0.3s ease;
   }
+}
 
-
-
-
+/* ===================== */
+/*      MOBILE STYLE     */
+/* ===================== */
 
 @media (max-width: 768px) {
 
-  
   html, body {
     height: 100%;
     overflow: hidden;
@@ -254,7 +248,6 @@ footer {
     height: 75vh;
   }
 
-  
   .linkContainer {
     position: fixed;
     top: 7vh;
@@ -283,7 +276,6 @@ footer {
     color: var(--font-color);
   }
 
-  
   footer {
     border-radius: 20px 20px 0 0;
     background: var(--background-color);
@@ -332,7 +324,6 @@ footer {
     transform: translateY(-50%) rotate(20deg);
   }
 
-  
   footer .description {
     max-width: 100%;
     font-size: calc(0.5 * var(--font-size-default));
@@ -342,7 +333,7 @@ footer {
     margin: 3vw 3vh;
   }
 
-  
+  /* ouverture / fermeture via .is-open uniquement en mobile */
   footer.is-open {
     height: auto;
     padding-bottom: 2vh;
