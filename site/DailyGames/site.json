@@ -100,12 +100,6 @@
       "classement" : false
     },
     {
-      "name": "Tusmo",
-      "url": "https://www.tusmo.xyz/",
-      "image": "./image/Tusmo.png",
-      "classement" : false
-    },
-    {
       "name": "Sutom",
       "url": "https://sutom.nocle.fr/",
       "image": "./image/Sutom.png",
@@ -355,6 +349,12 @@
       "url": "https://www.dofusdle.com/",
       "image": "./image/dofusdle.png",
       "classement" : false
+    },
+    {
+      "name": "Geoguessr",
+      "url": "https://www.geoguessr.com/fr",
+      "image": "./image/geoguessr.png",
+      "classement" : false 
     }
   ]
 }
