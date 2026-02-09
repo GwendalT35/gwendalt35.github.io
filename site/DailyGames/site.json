@@ -355,6 +355,12 @@
       "url": "https://www.geoguessr.com/fr",
       "image": "./image/geoguessr.png",
       "classement" : false 
+    },
+    {
+      "name": "Geozoom France",
+      "url": "https://geozoom.app/fr",
+      "image": "./image/GeozoomFr.png",
+      "classement" : false 
     }
   ]
 }
