@@ -367,6 +367,12 @@
       "url": "https://www.rentguessr.fun/#game",
       "image": "./image/rentguessr.png",
       "classement" : false 
+    },
+    {
+      "name": "GuessWhat",
+      "url": "https://guesswhat-production-73a2.up.railway.app/",
+      "image": "./image/guesswhat.png",
+      "classement" : false 
     }
   ]
 }
