@@ -361,6 +361,12 @@
       "url": "https://geozoom.app/fr",
       "image": "./image/GeozoomFr.png",
       "classement" : false 
+    },
+    {
+      "name": "rentguessr",
+      "url": "https://www.rentguessr.fun/#game",
+      "image": "./image/rentguessr.png",
+      "classement" : false 
     }
   ]
 }
