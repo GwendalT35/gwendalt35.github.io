@@ -373,6 +373,12 @@
       "url": "https://guesswhat-production-73a2.up.railway.app/",
       "image": "./image/guesswhat.png",
       "classement" : false 
+    },
+    {
+      "name": "Glyph today",
+      "url": "https://glyph.today/",
+      "image": "./image/glyph.png",
+      "classement" : false 
     }
   ]
 }
