@@ -370,7 +370,7 @@
     },
     {
       "name": "GuessWhat",
-      "url": "https://guesswhat-production-73a2.up.railway.app/",
+      "url": "https://guesswhat.up.railway.app/",
       "image": "./image/guesswhat.png",
       "classement" : false 
     },
