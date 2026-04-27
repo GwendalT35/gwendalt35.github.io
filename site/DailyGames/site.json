@@ -379,6 +379,30 @@
       "url": "https://glyph.today/",
       "image": "./image/glyph.png",
       "classement" : false 
+    },
+    {
+      "name": "Mots Fléchés Le Parisien",
+      "url": "https://www.leparisien.fr/jeux/mots-fleches/",
+      "image": "./image/leparisien_xword.png",
+      "classement" : false 
+    },
+    {
+      "name": "Mots Fléchés Notre Temps",
+      "url": "https://www.notretemps.com/jeux/jeux-en-ligne/mots-fleches",
+      "image": "./image/notre_temps_xwords.png",
+      "classement" : false 
+    },
+    {
+      "name": "Mots Fléchés 20 Minutes",
+      "url": "https://www.20minutes.fr/services/jeux/mots-fleches",
+      "image": "./image/20minutes_xwords.png",
+      "classement" : false 
+    },
+    {
+      "name": "Wen-Ware",
+      "url": "https://wen-ware.com/",
+      "image": "./image/wenware.png",
+      "classement" : false 
     }
   ]
 }
