@@ -45,12 +45,6 @@
       "classement" : false
     },
     {
-      "name": "Invoker Game",
-      "url": "https://www.invokergame.com/",
-      "image": "./image/Invoker.png",
-      "classement" : false
-    },
-    {
       "name": "CookieClicker",
       "url": "https://orteil.dashnet.org/cookieclicker/",
       "image": "./image/Cookie.png",
@@ -199,12 +193,6 @@
       "classement" : false
     },
     {
-      "name": "CircuitsGame",
-      "url": "https://circuitsgame.com/",
-      "image": "./image/circuits.png",
-      "classement" : false
-    },
-    {
       "name": "Betweenle",
       "url": "https://betweenle.com/",
       "image": "./image/betweenle.png",
@@ -345,12 +333,6 @@
       "classement" : false
     },
     {
-      "name": "Dofusdle",
-      "url": "https://www.dofusdle.com/",
-      "image": "./image/dofusdle.png",
-      "classement" : false
-    },
-    {
       "name": "Geoguessr",
       "url": "https://www.geoguessr.com/fr",
       "image": "./image/geoguessr.png",
@@ -402,6 +384,42 @@
       "name": "Wen-Ware",
       "url": "https://wen-ware.com/",
       "image": "./image/wenware.png",
+      "classement" : false 
+    },
+    {
+      "name": "magnitudle",
+      "url": "https://magnitudle.com/",
+      "image": "./image/magnitudle.png",
+      "classement" : false 
+    },
+    {
+      "name": "meloguessr",
+      "url": "https://meloguessr.com/",
+      "image": "./image/meloguessr.png",
+      "classement" : false 
+    },
+    {
+      "name": "mcdle",
+      "url": "https://www.mcdle.net/",
+      "image": "./image/mcdle.png",
+      "classement" : false 
+    },
+    {
+      "name": "foodguessr",
+      "url": "https://www.foodguessr.com/",
+      "image": "./image/foodguessr.png",
+      "classement" : false 
+    },
+    {
+      "name": "vexle",
+      "url": "https://vexle.org/",
+      "image": "./image/vexle.png",
+      "classement" : false 
+    },
+    {
+      "name": "geodle",
+      "url": "https://geodle.me/",
+      "image": "./image/geodle.png",
       "classement" : false 
     }
   ]
